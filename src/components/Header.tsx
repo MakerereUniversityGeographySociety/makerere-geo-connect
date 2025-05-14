@@ -39,7 +39,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           <a href="#home" className="text-sm font-medium hover:text-geo-green transition-colors">Home</a>
-          <a href="#about" className="text-sm font-medium hover:text-geo-green transition-colors">Society Profile</a>
+          <a href="#about" className="text-sm font-medium hover:text-geo-green transition-colors">Profile</a>
           <a href="#events" className="text-sm font-medium hover:text-geo-green transition-colors">Events</a>
           <a href="#news" className="text-sm font-medium hover:text-geo-green transition-colors">News</a>
           <a href="#merchandise" className="text-sm font-medium hover:text-geo-green transition-colors">Merchandise</a>
@@ -78,7 +78,7 @@ const Header = () => {
         <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <a href="#home" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Home</a>
-            <a href="#about" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Society Profile</a>
+            <a href="#about" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Profile</a>
             <a href="#events" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Events</a>
             <a href="#news" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>News</a>
             <a href="#merchandise" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Merchandise</a>
