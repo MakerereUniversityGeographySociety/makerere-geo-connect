@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,9 +24,11 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-geo-green rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">M</span>
-          </div>
+          <img 
+            src="/lovable-uploads/0652451b-7248-4a89-ad03-efe7199fc573.png" 
+            alt="Makerere University Geography Society Logo" 
+            className="h-12 w-auto"
+          />
           <div className="hidden md:block">
             <p className="font-heading font-semibold text-geo-green-dark">Makerere University</p>
             <p className="text-xs -mt-1">Geography Society</p>
