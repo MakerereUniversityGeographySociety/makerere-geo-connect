@@ -74,7 +74,7 @@ const Header = () => {
           <a href="#merchandise" className="text-sm font-medium hover:text-geo-green transition-colors">Merchandise</a>
           <a href="#partners" className="text-sm font-medium hover:text-geo-green transition-colors">Partners</a>
           <a href="#resources" className="text-sm font-medium hover:text-geo-green transition-colors">Resources</a>
-          <a href="#subscribe" className="text-sm font-medium hover:text-geo-green transition-colors">Subscribe</a>
+          <a href="/join-us" className="text-sm font-medium hover:text-geo-green transition-colors">Join Us</a>
           
           {/* Connect Dropdown - Desktop */}
           <DropdownMenu>
@@ -119,7 +119,7 @@ const Header = () => {
             <a href="#merchandise" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Merchandise</a>
             <a href="#partners" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Partners</a>
             <a href="#resources" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Resources</a>
-            <a href="#subscribe" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Subscribe</a>
+            <a href="/join-us" className="py-2 text-geo-green-dark font-medium hover:bg-gray-50 px-2 rounded" onClick={() => setIsMenuOpen(false)}>Join Us</a>
             
             {/* Connect Section - Mobile */}
             <div className="py-2 text-geo-green-dark font-medium px-2">Connect:</div>
