@@ -2,7 +2,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Download, FileText, Video } from "lucide-react";
+import { Download, FileText, Video, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ResourcesSection = () => {
   const resources = {
@@ -61,6 +62,22 @@ const ResourcesSection = () => {
         description: "Tools and templates for climate data collection",
         items: 4
       }
+    ],
+    external: [
+      {
+        id: 1,
+        title: "Academic Resources Hub",
+        description: "Comprehensive repository of academic papers, books, and educational resources",
+        url: "https://geo-vault-hub-connect.lovable.app/",
+        icon: "📚"
+      },
+      {
+        id: 2,
+        title: "Story Maps",
+        description: "Interactive geographic stories created by our members",
+        url: "/story-maps",
+        icon: "🗺️"
+      }
     ]
   };
 
@@ -69,12 +86,45 @@ const ResourcesSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Resources</h2>
         
-        <Tabs defaultValue="documents" className="w-full">
-          <TabsList className="grid grid-cols-3 mb-8">
+        <Tabs defaultValue="external" className="w-full">
+          <TabsList className="grid grid-cols-4 mb-8">
+            <TabsTrigger value="external">External Resources</TabsTrigger>
             <TabsTrigger value="documents">Documents</TabsTrigger>
             <TabsTrigger value="videos">Videos</TabsTrigger>
             <TabsTrigger value="toolkits">Toolkits</TabsTrigger>
           </TabsList>
+          
+          <TabsContent value="external">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {resources.external.map((resource) => (
+                <Card key={resource.id} className="overflow-hidden transition-all hover:shadow-md">
+                  <CardHeader className="bg-geo-green-dark text-white">
+                    <div className="flex justify-between items-center">
+                      <CardTitle className="text-xl">{resource.title}</CardTitle>
+                      <div className="text-4xl">{resource.icon}</div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-6">
+                    <CardDescription className="text-base mb-6">{resource.description}</CardDescription>
+                    {resource.url.startsWith('http') ? (
+                      <Button 
+                        className="w-full" 
+                        onClick={() => window.open(resource.url, '_blank')}
+                      >
+                        Visit Resource <ExternalLink size={16} className="ml-2" />
+                      </Button>
+                    ) : (
+                      <Button className="w-full" asChild>
+                        <Link to={resource.url}>
+                          View Resource <ExternalLink size={16} className="ml-2" />
+                        </Link>
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
           
           <TabsContent value="documents">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -43,7 +43,7 @@ const Footer = () => {
               <a href="#merchandise" className="text-sm hover:underline">Merchandise</a>
               <a href="#partners" className="text-sm hover:underline">Partners</a>
               <a href="#resources" className="text-sm hover:underline">Resources</a>
-              <a href="#subscribe" className="text-sm hover:underline">Subscribe</a>
+              <a href="#social" className="text-sm hover:underline">Connect</a>
             </div>
           </div>
           
@@ -59,7 +59,8 @@ const Footer = () => {
               </div>
               <div className="ml-3">
                 <p className="font-semibold">Makerere University</p>
-                <p className="text-xs">College of Humanities and Social Sciences</p>
+                <p className="text-xs">College of Agriculture and Environmental Sciences</p>
+                <p className="text-xs">School of Forestry, Environment and Geographical Sciences</p>
               </div>
             </div>
             <p className="text-sm">
