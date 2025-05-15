@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,13 +63,14 @@ const Header = () => {
     },
   ];
 
+  // Updated event items to all point to the same registration form
   const eventItems = [
-    { name: "Freshers' Orientation", url: "https://forms.gle/yourFormLink" },
-    { name: "General Assembly", url: "https://forms.gle/yourFormLink2" },
-    { name: "Seminars and Workshops", url: "https://forms.gle/yourFormLink3" },
-    { name: "Field Study Trips", url: "https://forms.gle/yourFormLink4" },
-    { name: "Quizzes and Mapathons", url: "https://forms.gle/yourFormLink5" },
-    { name: "Elections and Polls", url: "https://forms.gle/yourFormLink6" },
+    { name: "Freshers' Orientation", url: "https://form.jotform.com/251345731976060" },
+    { name: "General Assembly", url: "https://form.jotform.com/251345731976060" },
+    { name: "Seminars and Workshops", url: "https://form.jotform.com/251345731976060" },
+    { name: "Field Study Trips", url: "https://form.jotform.com/251345731976060" },
+    { name: "Quizzes and Mapathons", url: "https://form.jotform.com/251345731976060" },
+    { name: "Elections and Polls", url: "https://form.jotform.com/251345731976060" },
   ];
 
   const resourceItems = [
