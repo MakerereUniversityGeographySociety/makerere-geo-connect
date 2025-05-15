@@ -4,39 +4,34 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { CalendarDays, MapPin } from "lucide-react";
 
 const EventsSection = () => {
-  // Mock events data
+  // Updated events data
   const events = [
     {
       id: 1,
-      title: "Field Trip to Mt. Elgon",
+      title: "MUGS Hand Over",
       date: "June 15, 2025",
-      location: "Mt. Elgon National Park",
+      location: "Geography Department",
       image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      description: "Explore geological formations and ecosystems in Mt. Elgon National Park."
+      description: "Official handover ceremony for the new MUGS leadership team.",
+      formLink: "https://forms.gle/yourFormLink"
     },
     {
       id: 2,
-      title: "Urban Planning Seminar",
+      title: "MUGS Induction and Training",
       date: "July 10, 2025",
       location: "Arts Building, Makerere University",
       image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      description: "Learn about sustainable urban development from industry experts."
+      description: "Training session for new society members and leadership team.",
+      formLink: "https://forms.gle/yourFormLink2"
     },
     {
       id: 3,
-      title: "GIS Workshop",
+      title: "Freshers Orientation and Registration",
       date: "July 25, 2025",
-      location: "Computer Lab, Geography Department",
+      location: "Main Hall, Geography Department",
       image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      description: "Hands-on training with the latest GIS software and applications."
-    },
-    {
-      id: 4,
-      title: "Annual Geography Conference",
-      date: "August 5-7, 2025",
-      location: "Main Hall, Makerere University",
-      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      description: "Three-day conference featuring keynote speakers and student presentations."
+      description: "Orientation session for new students joining the society.",
+      formLink: "https://forms.gle/yourFormLink3"
     }
   ];
 
@@ -46,7 +41,7 @@ const EventsSection = () => {
         <h2 className="text-3xl font-bold text-center mb-12">Upcoming Events</h2>
         
         <div className="overflow-x-auto pb-4">
-          <div className="flex gap-6 min-w-max lg:grid lg:grid-cols-4 lg:min-w-0">
+          <div className="flex gap-6 min-w-max lg:grid lg:grid-cols-3 lg:min-w-0">
             {events.map((event) => (
               <Card key={event.id} className="w-72 lg:w-auto">
                 <div className="h-40 overflow-hidden">
@@ -71,7 +66,14 @@ const EventsSection = () => {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-geo-blue hover:bg-geo-blue-dark">RSVP Now</Button>
+                  <Button 
+                    className="w-full bg-geo-blue hover:bg-geo-blue-dark"
+                    asChild
+                  >
+                    <a href={event.formLink} target="_blank" rel="noopener noreferrer">
+                      RSVP Now
+                    </a>
+                  </Button>
                 </CardFooter>
               </Card>
             ))}

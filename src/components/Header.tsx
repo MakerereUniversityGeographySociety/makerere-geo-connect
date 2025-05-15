@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -89,7 +88,7 @@ const Header = () => {
           />
           <div className="hidden md:block">
             <p className="font-heading font-semibold text-geo-green-dark">Makerere University</p>
-            <p className="text-xs -mt-1">Geography Society</p>
+            <p className="font-heading font-semibold text-geo-green-dark -mt-1">Geography Society</p>
           </div>
         </a>
 

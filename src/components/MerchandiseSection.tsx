@@ -52,7 +52,14 @@ const MerchandiseSection = () => {
                   </div>
                   
                   <div className="mt-6">
-                    <Button className="w-full bg-geo-green hover:bg-geo-green-dark">Register Now</Button>
+                    <Button 
+                      className="w-full bg-geo-green hover:bg-geo-green-dark"
+                      asChild
+                    >
+                      <a href="https://form.jotform.com/251344966214054" target="_blank" rel="noopener noreferrer">
+                        Register Now
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -91,14 +98,21 @@ const MerchandiseSection = () => {
                   </div>
                   
                   <div className="mt-6">
-                    <Button className="w-full bg-geo-green hover:bg-geo-green-dark">Renew Now</Button>
+                    <Button 
+                      className="w-full bg-geo-green hover:bg-geo-green-dark"
+                      asChild
+                    >
+                      <a href="https://form.jotform.com/251344966214054" target="_blank" rel="noopener noreferrer">
+                        Renew Now
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
             </div>
             
             <div className="mt-12">
-              <h3 className="text-xl font-bold mb-6 text-center">Membership Extras</h3>
+              <h3 className="text-xl font-bold mb-6 text-center">Membership Identification</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Card>
@@ -110,9 +124,6 @@ const MerchandiseSection = () => {
                           alt="Society T-shirt"
                           className="object-cover w-full h-full"
                         />
-                      </div>
-                      <div className="absolute top-2 right-2 bg-geo-green text-white text-xs py-1 px-2 rounded">
-                        Optional
                       </div>
                     </div>
                     <div>
@@ -133,9 +144,6 @@ const MerchandiseSection = () => {
                           className="object-cover w-full h-full"
                         />
                       </div>
-                      <div className="absolute top-2 right-2 bg-geo-green text-white text-xs py-1 px-2 rounded">
-                        Optional
-                      </div>
                     </div>
                     <div>
                       <h4 className="font-bold">Society ID Card</h4>
@@ -151,8 +159,13 @@ const MerchandiseSection = () => {
                 <p className="mb-2">Basic subscription + T-shirt + ID Card</p>
                 <div className="text-3xl font-bold">UGX 55,000</div>
                 <p className="text-sm mt-1 text-white/70">Best value for new members</p>
-                <Button className="mt-4 bg-white text-geo-green-dark hover:bg-gray-100">
-                  Get Complete Package
+                <Button 
+                  className="mt-4 bg-white text-geo-green-dark hover:bg-gray-100"
+                  asChild
+                >
+                  <a href="https://form.jotform.com/251344966214054" target="_blank" rel="noopener noreferrer">
+                    Get Complete Package
+                  </a>
                 </Button>
               </div>
             </div>
@@ -174,7 +187,11 @@ const MerchandiseSection = () => {
                   <p className="text-sm text-gray-600 mb-4">White polo with green collar and society logo</p>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-bold text-geo-green-dark">UGX 25,000</span>
-                    <Button size="sm">Order Now</Button>
+                    <Button size="sm" asChild>
+                      <a href="https://form.jotform.com/251344966214054" target="_blank" rel="noopener noreferrer">
+                        Order Now
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -193,7 +210,11 @@ const MerchandiseSection = () => {
                   <p className="text-sm text-gray-600 mb-4">Official identification for members</p>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-bold text-geo-green-dark">UGX 15,000</span>
-                    <Button size="sm">Order Now</Button>
+                    <Button size="sm" asChild>
+                      <a href="https://form.jotform.com/251344966214054" target="_blank" rel="noopener noreferrer">
+                        Order Now
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -208,7 +229,11 @@ const MerchandiseSection = () => {
                   <p className="text-sm text-gray-600 mb-4">Field notebook with society branding</p>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-bold text-geo-green-dark">UGX 10,000</span>
-                    <Button size="sm">Order Now</Button>
+                    <Button size="sm" asChild>
+                      <a href="https://form.jotform.com/251344966214054" target="_blank" rel="noopener noreferrer">
+                        Order Now
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
