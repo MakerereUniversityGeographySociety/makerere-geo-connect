@@ -22,7 +22,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={18} />
-                <a href="tel:+256700000000" className="text-sm hover:underline">+256 700 000 000</a>
+                <a href="tel:+256782462298" className="text-sm hover:underline">+256 782 462 298</a>
               </div>
             </div>
             <div className="mt-6">
@@ -51,11 +51,11 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">University Affiliation</h3>
             <div className="flex items-center mb-4">
-              {/* University Logo */}
+              {/* Updated University Logo */}
               <div className="bg-white p-2 rounded">
                 <div className="w-16 h-16 flex items-center justify-center">
                   <img 
-                    src="/lovable-uploads/0652451b-7248-4a89-ad03-efe7199fc573.png" 
+                    src="/lovable-uploads/4261bc4e-5c81-40b6-977a-93341c1782ca.png" 
                     alt="Makerere University Logo" 
                     className="w-full h-full object-contain"
                   />

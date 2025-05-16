@@ -93,7 +93,7 @@ const MerchandiseSection = () => {
                   
                   <div className="mt-6 text-center bg-geo-green/5 py-4 rounded-lg">
                     <p className="text-sm text-gray-600">Renewal Fee</p>
-                    <p className="text-3xl font-bold text-geo-green-dark">UGX 10,000</p>
+                    <p className="text-3xl font-bold text-geo-green-dark">UGX 3,000</p>
                     <p className="text-xs text-gray-500">Annual Subscription</p>
                   </div>
                   

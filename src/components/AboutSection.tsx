@@ -2,11 +2,23 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutSection = () => {
-  // Mock committee members data
+  // Updated committee members data with real members
   const committeeMembers = [
-    { name: "John Doe", position: "Chairperson", image: "https://randomuser.me/api/portraits/men/1.jpg" },
-    { name: "Jane Smith", position: "Vice Chairperson", image: "https://randomuser.me/api/portraits/women/1.jpg" },
-    { name: "Robert Johnson", position: "Secretary", image: "https://randomuser.me/api/portraits/men/2.jpg" },
+    { 
+      name: "Muyinza Joel Robert", 
+      position: "President", 
+      image: "/lovable-uploads/72c99286-a222-413e-a5e5-e42f28592344.png" 
+    },
+    { 
+      name: "Asiimwe Joan", 
+      position: "Vice President", 
+      image: "/lovable-uploads/efe5a679-8ba4-4d63-a8b5-e804e1a983b1.png" 
+    },
+    { 
+      name: "Tollo Titus Vanon", 
+      position: "Speaker", 
+      image: "/lovable-uploads/fcdf8b47-5a8a-4307-97d6-abc5629dbc3a.png" 
+    },
   ];
 
   return (
@@ -52,8 +64,31 @@ const AboutSection = () => {
           
           <div className="h-full flex items-center justify-center">
             <div className="aspect-video w-full h-auto rounded-lg overflow-hidden shadow-lg">
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <p className="text-gray-500">Promo Video or Gallery</p>
+              <div className="grid grid-cols-2 gap-2 h-full">
+                <div className="relative aspect-square overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/eb6ddb1c-824a-4a18-808d-07f2ccb0877e.png" 
+                    alt="Field trip" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative aspect-square overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/66b5082b-1f74-42cf-a7f7-010e80c6ad97.png" 
+                    alt="Classroom session" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative aspect-square overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/d2bb1526-f5e5-432f-b9a7-af9bf3c83213.png" 
+                    alt="Outdoor lecture" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative flex items-center justify-center bg-geo-green-dark text-white p-4">
+                  <p className="text-center font-semibold">Exploring & Learning Together</p>
+                </div>
               </div>
             </div>
           </div>
