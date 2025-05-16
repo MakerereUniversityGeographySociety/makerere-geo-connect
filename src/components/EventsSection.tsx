@@ -13,7 +13,7 @@ const EventsSection = () => {
       location: "Geography Department",
       image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Official handover ceremony for the new MUGS leadership team.",
-      formLink: "https://forms.gle/yourFormLink"
+      formLink: "https://form.jotform.com/251345731976060"
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const EventsSection = () => {
       location: "Arts Building, Makerere University",
       image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Training session for new society members and leadership team.",
-      formLink: "https://forms.gle/yourFormLink2"
+      formLink: "https://form.jotform.com/251345731976060"
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const EventsSection = () => {
       location: "Main Hall, Geography Department",
       image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Orientation session for new students joining the society.",
-      formLink: "https://forms.gle/yourFormLink3"
+      formLink: "https://form.jotform.com/251345731976060"
     }
   ];
 
@@ -71,7 +71,7 @@ const EventsSection = () => {
                     asChild
                   >
                     <a href={event.formLink} target="_blank" rel="noopener noreferrer">
-                      RSVP Now
+                      Register
                     </a>
                   </Button>
                 </CardFooter>

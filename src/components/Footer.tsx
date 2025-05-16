@@ -51,10 +51,14 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">University Affiliation</h3>
             <div className="flex items-center mb-4">
-              {/* University Logo Placeholder */}
+              {/* University Logo */}
               <div className="bg-white p-2 rounded">
-                <div className="w-16 h-16 bg-geo-green rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">M</span>
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <img 
+                    src="/lovable-uploads/0652451b-7248-4a89-ad03-efe7199fc573.png" 
+                    alt="Makerere University Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
               <div className="ml-3">
@@ -66,6 +70,11 @@ const Footer = () => {
             <p className="text-sm">
               The Geography Society is a student organization under the Department of Geography Geo-Informatics and Climatic Sciences at Makerere University.
             </p>
+            <div className="mt-4">
+              <Button asChild className="bg-white text-geo-green-dark hover:bg-gray-100">
+                <a href="/join-us">Join Us Today</a>
+              </Button>
+            </div>
           </div>
         </div>
         
