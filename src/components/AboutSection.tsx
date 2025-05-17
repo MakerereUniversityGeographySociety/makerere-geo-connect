@@ -62,34 +62,41 @@ const AboutSection = () => {
             </div>
           </div>
           
-          <div className="h-full flex items-center justify-center">
-            <div className="aspect-video w-full h-auto rounded-lg overflow-hidden shadow-lg">
-              <div className="grid grid-cols-2 gap-2 h-full">
-                <div className="relative aspect-square overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/eb6ddb1c-824a-4a18-808d-07f2ccb0877e.png" 
-                    alt="Field trip" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="relative aspect-square overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/66b5082b-1f74-42cf-a7f7-010e80c6ad97.png" 
-                    alt="Classroom session" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="relative aspect-square overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/d2bb1526-f5e5-432f-b9a7-af9bf3c83213.png" 
-                    alt="Outdoor lecture" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="relative flex items-center justify-center bg-geo-green-dark text-white p-4">
-                  <p className="text-center font-semibold">Exploring & Learning Together</p>
-                </div>
-              </div>
+          <div className="h-full flex items-center">
+            <div className="w-full p-6 bg-white rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold mb-4">Our Values</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <div className="text-geo-green mt-1">✓</div>
+                  <div>
+                    <span className="font-semibold">Knowledge:</span> We value the pursuit of geographical knowledge and understanding
+                  </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="text-geo-green mt-1">✓</div>
+                  <div>
+                    <span className="font-semibold">Conservation:</span> We are committed to protecting natural environments
+                  </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="text-geo-green mt-1">✓</div>
+                  <div>
+                    <span className="font-semibold">Community:</span> We foster a supportive community of geography enthusiasts
+                  </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="text-geo-green mt-1">✓</div>
+                  <div>
+                    <span className="font-semibold">Innovation:</span> We embrace new technologies and approaches in geographical sciences
+                  </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="text-geo-green mt-1">✓</div>
+                  <div>
+                    <span className="font-semibold">Practical Learning:</span> We believe in hands-on, experiential education
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -54,20 +54,10 @@ const DesktopNavigation = () => {
           Resources
         </DropdownMenuTrigger>
         <DropdownMenuContent align="center">
-          <DropdownMenuItem asChild>
-            <a 
-              href="#merchandise" 
-              className="cursor-pointer"
-            >
-              Merchandise
-            </a>
-          </DropdownMenuItem>
           {resourceItems.map((resource) => (
             <DropdownMenuItem key={resource.name} asChild>
               <a 
                 href={resource.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
                 className="cursor-pointer"
               >
                 {resource.name}
