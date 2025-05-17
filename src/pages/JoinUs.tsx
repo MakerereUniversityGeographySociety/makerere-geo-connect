@@ -1,74 +1,74 @@
 
-import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
 const JoinUs = () => {
   return (
-    <>
-      <Helmet>
-        <title>Join Us | Makerere University Geography Society</title>
-      </Helmet>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="pt-24 pb-16">
-        <section className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Join Makerere University Geography Society</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Become part of a vibrant community dedicated to exploring and understanding our world through the lens of geography.
-            </p>
-          </div>
-
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-12">
-            <div className="grid md:grid-cols-2">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold mb-4">Membership Benefits</h2>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 text-geo-green">✓</div>
-                    <p>Access to exclusive events, field trips, and workshops</p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 text-geo-green">✓</div>
-                    <p>Networking opportunities with professionals in the field</p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 text-geo-green">✓</div>
-                    <p>Resources to enhance your academic and professional growth</p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 text-geo-green">✓</div>
-                    <p>Opportunities to participate in research and community projects</p>
-                  </li>
-                </ul>
-
-                <div className="mt-6">
-                  <Button 
-                    className="bg-geo-green hover:bg-geo-green-dark"
-                    asChild
-                  >
-                    <a href="https://form.jotform.com/251344966214054" target="_blank" rel="noopener noreferrer">
+      <main className="flex-grow pt-24">
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h1 className="text-4xl font-bold mb-8 text-geo-green-dark">Join the Geography Society</h1>
+              
+              <div className="bg-white shadow-md rounded-lg overflow-hidden">
+                <div className="p-6">
+                  <h2 className="text-2xl font-semibold mb-4">Membership Guidelines</h2>
+                  <p className="mb-6 text-gray-700">
+                    Become a member of the Makerere University Geography Society and join our community of geography enthusiasts. 
+                    As a member, you'll have access to exclusive events, field trips, resources, and networking opportunities.
+                  </p>
+                  
+                  <h3 className="text-xl font-semibold mb-3 text-geo-green-dark">Membership Fees</h3>
+                  <div className="mb-6">
+                    <div className="mb-4 border-b pb-4">
+                      <p className="font-semibold">New Member Basic Subscription</p>
+                      <p className="text-lg font-bold">UGX 15,000</p>
+                      <p className="text-sm text-gray-600 mt-1">Annual membership fee for new members</p>
+                    </div>
+                    
+                    <h4 className="font-semibold mb-2">Full Membership Perks (Optional)</h4>
+                    
+                    <div className="pl-4 mb-3 border-l-2 border-geo-green">
+                      <p className="font-medium">Society T-shirt</p>
+                      <p className="flex justify-between">
+                        <span className="text-gray-600">Additional</span>
+                        <span className="font-bold">UGX 25,000</span>
+                      </p>
+                    </div>
+                    
+                    <div className="pl-4 mb-3 border-l-2 border-geo-green">
+                      <p className="font-medium">Society ID</p>
+                      <p className="flex justify-between">
+                        <span className="text-gray-600">Additional</span>
+                        <span className="font-bold">UGX 15,000</span>
+                      </p>
+                    </div>
+                    
+                    <div className="mt-6 bg-gray-50 p-4 rounded-md">
+                      <p className="font-semibold">Complete Package (All Inclusive)</p>
+                      <p className="text-xl font-bold text-geo-green-dark">UGX 55,000</p>
+                      <p className="text-sm text-gray-600">Includes basic subscription, t-shirt, and ID</p>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold mb-3 text-geo-green-dark">How to Join</h3>
+                  <ol className="list-decimal pl-5 mb-6 space-y-2 text-gray-700">
+                    <li>Fill out the membership form below</li>
+                    <li>Pay the membership fee via mobile money or at the society office</li>
+                    <li>Receive your membership confirmation via email</li>
+                    <li>Collect your membership package (if applicable) from the society office</li>
+                  </ol>
+                  
+                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button className="bg-geo-green hover:bg-geo-green-dark text-white px-8 py-2">
                       Register Now
-                    </a>
-                  </Button>
-                </div>
-              </div>
-              <div className="bg-geo-green-dark flex items-center justify-center p-8">
-                <div className="text-white">
-                  <h3 className="text-xl font-bold mb-4">Membership Fees</h3>
-                  <div className="mb-4">
-                    <p className="text-lg font-semibold">New Members</p>
-                    <p className="text-3xl font-bold">UGX 15,000</p>
-                  </div>
-                  <div>
-                    <p className="text-lg font-semibold">Renewal</p>
-                    <p className="text-3xl font-bold">UGX 3,000</p>
-                  </div>
-                  <div className="mt-8 pt-6 border-t border-white/20">
-                    <p className="text-lg font-semibold">Complete Package</p>
-                    <p className="text-sm text-white/70">(Includes T-shirt and ID Card)</p>
-                    <p className="text-3xl font-bold">UGX 40,000</p>
+                    </Button>
+                    <Button variant="outline" className="border-geo-green text-geo-green hover:bg-geo-green/10">
+                      Contact Us for More Info
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -77,7 +77,7 @@ const JoinUs = () => {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
