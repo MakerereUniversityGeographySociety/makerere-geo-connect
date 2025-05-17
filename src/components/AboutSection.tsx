@@ -26,77 +26,37 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">About the Society</h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <div className="mb-8">
-              <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-              <p className="text-gray-700 mb-4">
-                The Makerere University Geography Society aims to foster a community of geography enthusiasts, provide practical learning experiences, and connect students with industry professionals. We're committed to exploring our world through field trips, research, and community engagement.
-              </p>
-              <p className="text-gray-700">
-                Our vision is to create well-rounded geography graduates equipped with both theoretical knowledge and practical skills to address real-world challenges in climate change, urban planning, environmental management, and social geography.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-semibold mb-4">Committee Members</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {committeeMembers.map((member, index) => (
-                  <Card key={index} className="overflow-hidden">
-                    <CardContent className="p-0">
-                      <div className="aspect-square">
-                        <img 
-                          src={member.image} 
-                          alt={member.name} 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <h4 className="font-semibold">{member.name}</h4>
-                        <p className="text-sm text-gray-600">{member.position}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
+        <div className="mx-auto">
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+            <p className="text-gray-700 mb-4">
+              The Makerere University Geography Society aims to foster a community of geography enthusiasts, provide practical learning experiences, and connect students with industry professionals. We're committed to exploring our world through field trips, research, and community engagement.
+            </p>
+            <p className="text-gray-700">
+              Our vision is to create well-rounded geography graduates equipped with both theoretical knowledge and practical skills to address real-world challenges in climate change, urban planning, environmental management, and social geography.
+            </p>
           </div>
-          
-          <div className="h-full flex items-center">
-            <div className="w-full p-6 bg-white rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold mb-4">Our Values</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <div className="text-geo-green mt-1">✓</div>
-                  <div>
-                    <span className="font-semibold">Knowledge:</span> We value the pursuit of geographical knowledge and understanding
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="text-geo-green mt-1">✓</div>
-                  <div>
-                    <span className="font-semibold">Conservation:</span> We are committed to protecting natural environments
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="text-geo-green mt-1">✓</div>
-                  <div>
-                    <span className="font-semibold">Community:</span> We foster a supportive community of geography enthusiasts
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="text-geo-green mt-1">✓</div>
-                  <div>
-                    <span className="font-semibold">Innovation:</span> We embrace new technologies and approaches in geographical sciences
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="text-geo-green mt-1">✓</div>
-                  <div>
-                    <span className="font-semibold">Practical Learning:</span> We believe in hands-on, experiential education
-                  </div>
-                </li>
-              </ul>
+
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">Committee Members</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {committeeMembers.map((member, index) => (
+                <Card key={index} className="overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="aspect-square">
+                      <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h4 className="font-semibold">{member.name}</h4>
+                      <p className="text-sm text-gray-600">{member.position}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export const eventItems = [
 export const resourceItems = [
   { name: "Academic Resources Hub", url: "https://geo-vault-hub-connect.lovable.app/" },
   { name: "Story Maps", url: "/story-maps" },
-  { name: "Merchandise", url: "#merchandise" }, // Moved merchandise here
+  { name: "Merchandise", url: "#merchandise" },
 ];
 
 // Main navigation items

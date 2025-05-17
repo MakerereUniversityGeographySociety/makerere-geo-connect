@@ -10,8 +10,8 @@ const Logo = () => {
         className="h-12 w-auto"
       />
       <div className="hidden md:block">
-        <p className="font-heading font-semibold text-geo-green-dark">Makerere University</p>
-        <p className="font-heading font-semibold text-geo-green-dark -mt-1">Geography Society</p>
+        <p className="font-heading font-semibold text-white">Makerere University</p>
+        <p className="font-heading font-semibold text-white -mt-1">Geography Society</p>
       </div>
     </a>
   );

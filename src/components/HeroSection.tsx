@@ -36,9 +36,11 @@ const HeroSection = () => {
           United to Conserve Nature
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Button className="bg-geo-green hover:bg-geo-green-dark text-white font-semibold px-8 py-6">
-            View Events
-          </Button>
+          <a href="#events">
+            <Button className="bg-geo-green hover:bg-geo-green-dark text-white font-semibold px-8 py-6">
+              View Events
+            </Button>
+          </a>
         </div>
       </div>
     </section>

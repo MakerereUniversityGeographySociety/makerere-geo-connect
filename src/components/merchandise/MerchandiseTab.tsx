@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shirt } from "lucide-react";
 
 interface ProductCardProps {
   name: string;
@@ -69,19 +68,12 @@ const MerchandiseTab = () => {
       price: "UGX 15,000",
       imageSrc: "/lovable-uploads/3f0a9420-6fe2-46c1-a17d-db3916896c70.png",
       formLink: "https://form.jotform.com/251344966214054"
-    },
-    {
-      name: "MUGS Branded Notebook",
-      description: "Field notebook with society branding",
-      price: "UGX 10,000",
-      imageSrc: <Shirt className="h-24 w-24 text-geo-green opacity-70" />,
-      formLink: "https://form.jotform.com/251344966214054"
     }
   ];
 
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {products.map((product, index) => (
           <ProductCard 
             key={index}
