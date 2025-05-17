@@ -20,7 +20,7 @@ export const resourceItems = [
 
 // Main navigation items
 export const navItems = [
-  { name: "Home", url: "#home" },
+  { name: "Home", url: "/" },
   { name: "News", url: "#news" },
   { name: "Partners", url: "#partners" },
   { name: "Join Us", url: "/join-us" },

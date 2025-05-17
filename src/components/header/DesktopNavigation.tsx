@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,15 +17,30 @@ const DesktopNavigation = () => {
   return (
     <nav className="hidden md:flex items-center gap-6">
       {/* Regular navigation items */}
-      {navItems.map((item) => (
-        <a 
-          key={item.name} 
-          href={item.url} 
-          className="text-sm font-medium text-white hover:text-gray-200 transition-colors"
-        >
-          {item.name}
-        </a>
-      ))}
+      {navItems.map((item) => {
+        // Check if it's an internal or external link
+        if (item.url.startsWith('/')) {
+          return (
+            <Link
+              key={item.name}
+              to={item.url}
+              className="text-sm font-medium text-white hover:text-gray-200 transition-colors"
+            >
+              {item.name}
+            </Link>
+          );
+        } else {
+          return (
+            <a
+              key={item.name}
+              href={item.url}
+              className="text-sm font-medium text-white hover:text-gray-200 transition-colors"
+            >
+              {item.name}
+            </a>
+          );
+        }
+      })}
       
       {/* Events Dropdown - Desktop */}
       <DropdownMenu>
@@ -54,16 +70,31 @@ const DesktopNavigation = () => {
           Resources
         </DropdownMenuTrigger>
         <DropdownMenuContent align="center">
-          {resourceItems.map((resource) => (
-            <DropdownMenuItem key={resource.name} asChild>
-              <a 
-                href={resource.url} 
-                className="cursor-pointer"
-              >
-                {resource.name}
-              </a>
-            </DropdownMenuItem>
-          ))}
+          {resourceItems.map((resource) => {
+            if (resource.url.startsWith('/')) {
+              return (
+                <DropdownMenuItem key={resource.name} asChild>
+                  <Link
+                    to={resource.url}
+                    className="cursor-pointer"
+                  >
+                    {resource.name}
+                  </Link>
+                </DropdownMenuItem>
+              );
+            } else {
+              return (
+                <DropdownMenuItem key={resource.name} asChild>
+                  <a 
+                    href={resource.url} 
+                    className="cursor-pointer"
+                  >
+                    {resource.name}
+                  </a>
+                </DropdownMenuItem>
+              );
+            }
+          })}
         </DropdownMenuContent>
       </DropdownMenu>
       
