@@ -14,7 +14,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white ${scrolled ? 'shadow-md py-2' : 'py-4'}`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 bg-geo-green ${scrolled ? 'shadow-md py-2' : 'py-4'}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo Component */}
         <Logo />
@@ -24,7 +24,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-geo-green-dark"
+          className="md:hidden text-white"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

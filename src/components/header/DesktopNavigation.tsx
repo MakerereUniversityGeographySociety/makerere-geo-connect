@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { eventItems, resourceItems, navItems } from './NavigationItems';
 import { socialLinks } from './SocialLinks';
+import { WhatsApp } from "lucide-react";
 
 const DesktopNavigation = () => {
   return (
@@ -18,7 +19,7 @@ const DesktopNavigation = () => {
         <a 
           key={item.name} 
           href={item.url} 
-          className="text-sm font-medium hover:text-geo-green transition-colors"
+          className="text-sm font-medium text-white hover:text-gray-200 transition-colors"
         >
           {item.name}
         </a>
@@ -26,7 +27,7 @@ const DesktopNavigation = () => {
       
       {/* Events Dropdown - Desktop */}
       <DropdownMenu>
-        <DropdownMenuTrigger className="text-sm font-medium hover:text-geo-green transition-colors">
+        <DropdownMenuTrigger className="text-sm font-medium text-white hover:text-gray-200 transition-colors">
           Events
         </DropdownMenuTrigger>
         <DropdownMenuContent align="center">
@@ -48,10 +49,18 @@ const DesktopNavigation = () => {
       
       {/* Resources Dropdown - Desktop */}
       <DropdownMenu>
-        <DropdownMenuTrigger className="text-sm font-medium hover:text-geo-green transition-colors">
+        <DropdownMenuTrigger className="text-sm font-medium text-white hover:text-gray-200 transition-colors">
           Resources
         </DropdownMenuTrigger>
         <DropdownMenuContent align="center">
+          <DropdownMenuItem asChild>
+            <a 
+              href="#merchandise" 
+              className="cursor-pointer"
+            >
+              Merchandise
+            </a>
+          </DropdownMenuItem>
           {resourceItems.map((resource) => (
             <DropdownMenuItem key={resource.name} asChild>
               <a 
@@ -69,10 +78,21 @@ const DesktopNavigation = () => {
       
       {/* Connect Dropdown - Desktop */}
       <DropdownMenu>
-        <DropdownMenuTrigger className="text-sm font-medium hover:text-geo-green transition-colors">
+        <DropdownMenuTrigger className="text-sm font-medium text-white hover:text-gray-200 transition-colors">
           Connect
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
+          <DropdownMenuItem asChild>
+            <a 
+              href="https://chat.whatsapp.com/KaLUt96H2H54PaIioqPcZY" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <WhatsApp size={16} />
+              <span>Join WhatsApp Group</span>
+            </a>
+          </DropdownMenuItem>
           {socialLinks.map((social) => (
             <DropdownMenuItem key={social.name} asChild>
               <a 
