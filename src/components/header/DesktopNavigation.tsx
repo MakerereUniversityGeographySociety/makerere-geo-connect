@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { eventItems, resourceItems, navItems } from './NavigationItems';
 import { socialLinks } from './SocialLinks';
-import { WhatsApp } from "lucide-react";
+// Import MessageSquare instead of WhatsApp (which isn't available in this version of lucide-react)
+import { MessageSquare } from "lucide-react";
 
 const DesktopNavigation = () => {
   return (
@@ -89,7 +90,7 @@ const DesktopNavigation = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2"
             >
-              <WhatsApp size={16} />
+              <MessageSquare size={16} />
               <span>Join WhatsApp Group</span>
             </a>
           </DropdownMenuItem>
