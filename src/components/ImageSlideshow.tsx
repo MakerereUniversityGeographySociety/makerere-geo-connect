@@ -31,7 +31,7 @@ const ImageSlideshow = ({ images, interval = 5000, className }: ImageSlideshowPr
       <CarouselContent>
         {images.map((image, index) => (
           <CarouselItem key={index} className="relative">
-            <div className="relative aspect-video overflow-hidden rounded-lg">
+            <div className="relative aspect-video overflow-hidden rounded-lg h-full">
               <img
                 src={image}
                 alt={`Slideshow image ${index + 1}`}
@@ -44,14 +44,14 @@ const ImageSlideshow = ({ images, interval = 5000, className }: ImageSlideshowPr
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="flex justify-center mt-4 gap-2">
+      <div className="flex justify-center mt-4 gap-2 absolute bottom-4 left-0 right-0 z-10">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
             className={cn(
               "w-2 h-2 rounded-full transition-all",
-              index === activeIndex ? "bg-geo-green w-4" : "bg-gray-300"
+              index === activeIndex ? "bg-geo-green w-4" : "bg-white"
             )}
             aria-label={`Go to slide ${index + 1}`}
           />

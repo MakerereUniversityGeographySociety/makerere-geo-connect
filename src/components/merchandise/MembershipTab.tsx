@@ -103,13 +103,13 @@ const CompletePackage = () => {
     <div className="mt-8 bg-geo-green-dark text-white p-6 rounded-lg max-w-xl mx-auto text-center">
       <h3 className="font-bold text-xl">Complete Package</h3>
       <p className="mb-2">Basic subscription + T-shirt + ID Card</p>
-      <div className="text-3xl font-bold">UGX 55,000</div>
+      <div className="text-3xl font-bold">UGX 40,000</div>
       <p className="text-sm mt-1 text-white/70">Best value for new members</p>
       <Button 
         className="mt-4 bg-white text-geo-green-dark hover:bg-gray-100"
         asChild
       >
-        <a href="https://form.jotform.com/251344966214054" target="_blank" rel="noopener noreferrer">
+        <a href="https://form.jotform.com/251356740625053" target="_blank" rel="noopener noreferrer">
           Get Complete Package
         </a>
       </Button>
