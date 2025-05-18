@@ -1,6 +1,24 @@
 
 import React, { useEffect } from 'react';
 
+// Declare the ArcGIS custom element
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'arcgis-embedded-map': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'item-id'?: string;
+        'theme'?: string;
+        'bookmarks-enabled'?: boolean;
+        'heading-enabled'?: boolean;
+        'legend-enabled'?: boolean;
+        'information-enabled'?: boolean;
+        'share-enabled'?: boolean;
+        'portal-url'?: string;
+      };
+    }
+  }
+}
+
 const MapSection = () => {
   useEffect(() => {
     // Ensure the ArcGIS script is loaded
