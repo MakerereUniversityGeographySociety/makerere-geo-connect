@@ -4,22 +4,41 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import { useEffect } from "react";
 
+// Define the window interface to include instgrm and twttr properties
+declare global {
+  interface Window {
+    instgrm?: {
+      Embeds: {
+        process: () => void;
+      };
+    };
+    twttr?: {
+      widgets: {
+        load: () => void;
+      };
+    };
+  }
+}
+
 const SocialSection = () => {
-  // Load Instagram embed script when the component mounts
+  // Load Instagram and Twitter embed scripts when the component mounts
   useEffect(() => {
-    // Check if the script is already loaded
-    if (!window.instgrm) {
-      // Create a script element for Instagram embed
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = "//www.instagram.com/embed.js";
-      document.body.appendChild(script);
-    } else {
-      // If already loaded, process any new embeds
-      if (window.instgrm && window.instgrm.Embeds) {
-        window.instgrm.Embeds.process();
-      }
+    // Instagram embed processing
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
     }
+
+    // Twitter embed processing
+    const twitterScript = document.createElement("script");
+    twitterScript.async = true;
+    twitterScript.src = "https://platform.twitter.com/widgets.js";
+    twitterScript.charset = "utf-8";
+    document.body.appendChild(twitterScript);
+
+    return () => {
+      // Clean up Twitter script when component unmounts
+      document.body.removeChild(twitterScript);
+    };
   }, []);
 
   const socialLinks = [
@@ -80,6 +99,7 @@ const SocialSection = () => {
           ))}
         </div>
         
+        {/* Instagram Posts Section */}
         <div className="mt-12">
           <h3 className="text-2xl font-bold text-center mb-6">Latest Instagram Posts</h3>
           
@@ -167,6 +187,58 @@ const SocialSection = () => {
                   width: '99.375%'
                 }}
               >
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        
+        {/* Twitter/X Posts Section */}
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold text-center mb-6">Latest Tweets</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex justify-center">
+              <blockquote className="twitter-tweet">
+                <p lang="en" dir="ltr">
+                  As we embark on a new year, we remember the importance of preserving the planet&#39;s glaciers. ❄ 
+                  2025 is the International Year for the Preservation of Glaciers – a reminder of their vital role 
+                  in for the health of our ecosystems and socioeconomic wellbeing. 
+                  <a href="https://twitter.com/hashtag/HappyNewYear?src=hash&amp;ref_src=twsrc%5Etfw">#HappyNewYear</a> 
+                  <a href="https://twitter.com/hashtag/MUGS?src=hash&amp;ref_src=twsrc%5Etfw">#MUGS</a> # 
+                  <a href="https://t.co/aOCfVGFMme">pic.twitter.com/aOCfVGFMme</a>
+                </p>
+                &mdash; MAKERERE UNIVERSITY GEOGRAPHY SOCIETY MUGS (@MUGS57584) 
+                <a href="https://twitter.com/MUGS57584/status/1876576923226087574?ref_src=twsrc%5Etfw">
+                  January 7, 2025
+                </a>
+              </blockquote>
+            </div>
+            
+            <div className="flex justify-center">
+              <blockquote className="twitter-tweet" data-media-max-width="560">
+                <p lang="en" dir="ltr">
+                  Taking <a href="https://twitter.com/hashtag/WaterAction?src=hash&amp;ref_src=twsrc%5Etfw">#WaterAction</a><br/> 
+                  really<br/> really<br/> really<br/> really<br/> really<br/> really<br/> really<br/> 
+                  really<br/>really<br/> really<br/> really<br/> really<br/> really<br/> really<br/> 
+                  really<br/> really<br/> really<br/> really<br/> really<br/>can&#39;t wait. 
+                  <a href="https://t.co/qVCfyfZ2C2">pic.twitter.com/qVCfyfZ2C2</a>
+                </p>
+                &mdash; Food and Agriculture Organization (@FAO) 
+                <a href="https://twitter.com/FAO/status/1904126050293940697?ref_src=twsrc%5Etfw">
+                  March 24, 2025
+                </a>
+              </blockquote>
+            </div>
+            
+            <div className="flex justify-center">
+              <blockquote className="twitter-tweet" data-media-max-width="560">
+                <p lang="zxx" dir="ltr">
+                  <a href="https://t.co/Yv92S9CYRd">pic.twitter.com/Yv92S9CYRd</a>
+                </p>
+                &mdash; MAKERERE UNIVERSITY GEOGRAPHY SOCIETY MUGS (@MUGS57584) 
+                <a href="https://twitter.com/MUGS57584/status/1842498775903789285?ref_src=twsrc%5Etfw">
+                  October 5, 2024
+                </a>
               </blockquote>
             </div>
           </div>
