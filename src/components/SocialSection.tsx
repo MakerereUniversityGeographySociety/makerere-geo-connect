@@ -2,8 +2,26 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import { useEffect } from "react";
 
 const SocialSection = () => {
+  // Load Instagram embed script when the component mounts
+  useEffect(() => {
+    // Check if the script is already loaded
+    if (!window.instgrm) {
+      // Create a script element for Instagram embed
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "//www.instagram.com/embed.js";
+      document.body.appendChild(script);
+    } else {
+      // If already loaded, process any new embeds
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+    }
+  }, []);
+
   const socialLinks = [
     {
       platform: "Instagram",
@@ -62,35 +80,96 @@ const SocialSection = () => {
           ))}
         </div>
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Instagram Feed Embed Placeholder */}
-          <Card className="overflow-hidden">
-            <div className="h-10 bg-[#E1306C] flex items-center px-4">
-              <Instagram className="text-white mr-2" size={16} />
-              <span className="text-white text-sm">Instagram Feed</span>
-            </div>
-            <CardContent className="p-0">
-              <div className="grid grid-cols-3 gap-1">
-                {Array(6).fill(0).map((_, i) => (
-                  <div key={i} className="aspect-square bg-gray-200"></div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold text-center mb-6">Latest Instagram Posts</h3>
           
-          {/* Twitter Feed Embed Placeholder */}
-          <Card className="overflow-hidden">
-            <div className="h-10 bg-[#1DA1F2] flex items-center px-4">
-              <Twitter className="text-white mr-2" size={16} />
-              <span className="text-white text-sm">Latest Tweets</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="flex justify-center">
+              <blockquote 
+                className="instagram-media" 
+                data-instgrm-captioned 
+                data-instgrm-permalink="https://www.instagram.com/p/DHl5rHboc8X/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="14"
+                style={{ 
+                  background: '#FFF', 
+                  border: 0, 
+                  borderRadius: '3px', 
+                  boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', 
+                  margin: '1px', 
+                  maxWidth: '540px', 
+                  minWidth: '326px', 
+                  padding: 0,
+                  width: '99.375%'
+                }}
+              >
+              </blockquote>
             </div>
-            <CardContent className="p-4">
-              <div className="border-l-4 border-[#1DA1F2] pl-4 py-2">
-                <p className="text-sm">Join our upcoming field trip to explore the geographical features of Lake Victoria! Registration opens next week. #FieldTrip #Geography #MUGS</p>
-                <p className="text-xs text-gray-500 mt-2">@MUGS57584 · 2d</p>
-              </div>
-            </CardContent>
-          </Card>
+            
+            <div className="flex justify-center">
+              <blockquote 
+                className="instagram-media" 
+                data-instgrm-captioned 
+                data-instgrm-permalink="https://www.instagram.com/p/DGvQWN0oM9V/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="14"
+                style={{ 
+                  background: '#FFF', 
+                  border: 0, 
+                  borderRadius: '3px', 
+                  boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', 
+                  margin: '1px', 
+                  maxWidth: '540px', 
+                  minWidth: '326px', 
+                  padding: 0,
+                  width: '99.375%'
+                }}
+              >
+              </blockquote>
+            </div>
+          </div>
+          
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="flex justify-center">
+              <blockquote 
+                className="instagram-media" 
+                data-instgrm-captioned 
+                data-instgrm-permalink="https://www.instagram.com/p/DFr5y3ho9RU/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="14"
+                style={{ 
+                  background: '#FFF', 
+                  border: 0, 
+                  borderRadius: '3px', 
+                  boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', 
+                  margin: '1px', 
+                  maxWidth: '540px', 
+                  minWidth: '326px', 
+                  padding: 0,
+                  width: '99.375%'
+                }}
+              >
+              </blockquote>
+            </div>
+            
+            <div className="flex justify-center">
+              <blockquote 
+                className="instagram-media" 
+                data-instgrm-captioned 
+                data-instgrm-permalink="https://www.instagram.com/p/DDeDRRZoyPp/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="14"
+                style={{ 
+                  background: '#FFF', 
+                  border: 0, 
+                  borderRadius: '3px', 
+                  boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', 
+                  margin: '1px', 
+                  maxWidth: '540px', 
+                  minWidth: '326px', 
+                  padding: 0,
+                  width: '99.375%'
+                }}
+              >
+              </blockquote>
+            </div>
+          </div>
         </div>
         
         <div className="mt-8 text-center">
