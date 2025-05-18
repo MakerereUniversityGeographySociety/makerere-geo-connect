@@ -30,6 +30,18 @@ const Footer = () => {
                 Contact Us
               </Button>
             </div>
+            
+            {/* Google Maps Embed */}
+            <div className="mt-6 bg-white p-1 rounded overflow-hidden">
+              <iframe 
+                src="https://www.google.com/maps/d/embed?mid=1ZbmqGWW30bV5MZ-8fZKoI_AlYfnupsc&ehbc=2E312F" 
+                title="MUGS Location"
+                className="w-full h-48 md:h-64 lg:h-48" 
+                style={{border: 0}}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
           
           {/* Quick Links */}

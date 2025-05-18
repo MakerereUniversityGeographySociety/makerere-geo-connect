@@ -81,8 +81,14 @@ const EventsSection = () => {
         </div>
         
         <div className="text-center mt-8">
-          <Button variant="outline" className="border-geo-blue text-geo-blue hover:bg-geo-blue hover:text-white">
-            View Full Calendar
+          <Button 
+            variant="outline" 
+            className="border-geo-blue text-geo-blue hover:bg-geo-blue hover:text-white"
+            asChild
+          >
+            <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener noreferrer">
+              View Full Calendar
+            </a>
           </Button>
         </div>
       </div>
