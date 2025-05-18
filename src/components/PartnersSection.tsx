@@ -75,8 +75,14 @@ const PartnersSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="outline" className="border-geo-green text-geo-green hover:bg-geo-green hover:text-white">
-            Become a Partner
+          <Button 
+            variant="outline" 
+            className="border-geo-green text-geo-green hover:bg-geo-green hover:text-white"
+            asChild
+          >
+            <a href="mailto:mugs.universitygeographysociety@gmail.com?subject=Partnership%20Inquiry&body=I%20am%20interested%20in%20becoming%20a%20partner%20with%20Makerere%20University%20Geography%20Society.%20Please%20provide%20more%20information.">
+              Become a Partner
+            </a>
           </Button>
         </div>
       </div>
