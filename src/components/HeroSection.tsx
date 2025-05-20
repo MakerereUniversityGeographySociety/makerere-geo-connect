@@ -2,8 +2,8 @@
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
-  // Single hero image for background
-  const heroImage = "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1920";
+  // Use the uploaded image instead of the stock photo
+  const heroImage = "/lovable-uploads/ab88620e-3c2f-4622-8a52-e4d1eb42af3f.png";
 
   return (
     <section id="home" className="relative h-screen flex items-center justify-center pt-16">
@@ -11,10 +11,10 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
-          alt="Geography landscape" 
+          alt="Geography Society field trip" 
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10 text-center">
