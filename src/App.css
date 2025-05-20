@@ -1,10 +1,51 @@
+
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
+/* Target mobile devices in landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  #home {
+    min-height: 120vh; /* Allow scrolling in landscape mode for small heights */
+  }
+  
+  .hero-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Responsive font sizes */
+@media (max-width: 480px) {
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 4vw, 2rem) !important;
+  }
+  
+  p {
+    font-size: clamp(0.875rem, 3vw, 1rem) !important;
+  }
+}
+
+/* Ensure elements respond to rotation */
+@media screen and (orientation: portrait) {
+  .orientation-responsive {
+    flex-direction: column;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .orientation-responsive {
+    flex-direction: row;
+  }
+}
+
+/* Keep legacy styles */
 .logo {
   height: 6em;
   padding: 1.5em;
