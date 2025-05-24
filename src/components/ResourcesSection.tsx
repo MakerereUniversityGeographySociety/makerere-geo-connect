@@ -2,65 +2,97 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Download, FileText, Video, ExternalLink } from "lucide-react";
+import { Download, FileText, Video, ExternalLink, Camera, Globe, Map, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ResourcesSection = () => {
   const resources = {
-    documents: [
-      {
-        id: 1,
-        title: "Introduction to GIS",
-        type: "PDF",
-        size: "2.4 MB",
-        description: "Beginner's guide to Geographic Information Systems",
-        category: "GIS"
-      },
-      {
-        id: 2,
-        title: "Field Research Methods",
-        type: "PDF",
-        size: "3.1 MB",
-        description: "Comprehensive guide to geographical field research techniques",
-        category: "Fieldwork"
-      },
-      {
-        id: 3,
-        title: "Climate Data Analysis",
-        type: "XLSX",
-        size: "1.8 MB",
-        description: "Spreadsheet templates for analyzing climate data",
-        category: "Climate"
-      }
-    ],
-    videos: [
-      {
-        id: 1,
-        title: "Mapmaking Tutorial",
-        duration: "24:15",
-        description: "Step-by-step guide to creating professional maps",
-        thumbnail: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      },
-      {
-        id: 2,
-        title: "Field Trip Highlights",
-        duration: "15:42",
-        description: "Footage from our recent expedition to Lake Victoria",
-        thumbnail: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      }
-    ],
+    gallery: {
+      photos: [
+        {
+          id: 1,
+          title: "Field Research Team",
+          description: "Our students conducting field research at Lake Victoria",
+          thumbnail: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        },
+        {
+          id: 2,
+          title: "Mapping Workshop",
+          description: "Students learning advanced mapping techniques",
+          thumbnail: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        },
+        {
+          id: 3,
+          title: "Geography Seminar",
+          description: "Annual geography symposium presentation",
+          thumbnail: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        }
+      ],
+      videos: [
+        {
+          id: 1,
+          title: "Mapmaking Tutorial",
+          duration: "24:15",
+          description: "Step-by-step guide to creating professional maps",
+          thumbnail: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        },
+        {
+          id: 2,
+          title: "Field Trip Highlights",
+          duration: "15:42",
+          description: "Footage from our recent expedition to Lake Victoria",
+          thumbnail: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        }
+      ]
+    },
     toolkits: [
       {
         id: 1,
-        title: "Map Reading Toolkit",
-        description: "Resources to help develop map reading skills",
-        items: 5
+        title: "Google Maps",
+        description: "Comprehensive mapping and navigation platform for location-based research",
+        url: "https://maps.google.com/",
+        icon: "/lovable-uploads/85a3639a-c758-40d9-8a7c-ccdee97b587e.png",
+        category: "Navigation & Mapping"
       },
       {
         id: 2,
-        title: "Climate Research Kit",
-        description: "Tools and templates for climate data collection",
-        items: 4
+        title: "OpenStreetMap",
+        description: "Free, editable map of the world built by a community of volunteers",
+        url: "https://www.openstreetmap.org/",
+        icon: "/lovable-uploads/751d3105-28e4-45ea-8a33-15b346902cea.png",
+        category: "Open Source Mapping"
+      },
+      {
+        id: 3,
+        title: "Africa Geoportal",
+        description: "Comprehensive geographic data and mapping services for Africa",
+        url: "https://www.africageoportal.com/",
+        icon: "/lovable-uploads/56dddc3f-d877-48a1-9cd2-ab37ccca44ef.png",
+        category: "Regional Data"
+      },
+      {
+        id: 4,
+        title: "ArcGIS Online",
+        description: "Professional GIS software for creating, analyzing, and sharing maps",
+        url: "https://www.arcgis.com/index.html",
+        icon: "/lovable-uploads/32ab7948-ab45-4553-becd-953ac415a309.png",
+        category: "Professional GIS"
+      },
+      {
+        id: 5,
+        title: "HOT Tasking Manager",
+        description: "Coordinate mapping activities for humanitarian response and development",
+        url: "https://tasks.hotosm.org/",
+        icon: "/lovable-uploads/bcb76699-fe4c-4c58-89c0-26641c35cc99.png",
+        category: "Humanitarian Mapping"
+      },
+      {
+        id: 6,
+        title: "Google Earth Engine",
+        description: "Cloud-based platform for planetary-scale geospatial analysis",
+        url: "https://code.earthengine.google.com/",
+        icon: "/lovable-uploads/0fb902de-459a-4ba1-b12a-17556d7ae9eb.png",
+        category: "Satellite Analysis"
       }
     ],
     external: [
@@ -87,11 +119,10 @@ const ResourcesSection = () => {
         <h2 className="text-3xl font-bold text-center mb-12">Resources</h2>
         
         <Tabs defaultValue="external" className="w-full">
-          <TabsList className="grid grid-cols-4 mb-8">
+          <TabsList className="grid grid-cols-3 mb-8">
             <TabsTrigger value="external">External Resources</TabsTrigger>
-            <TabsTrigger value="documents">Documents</TabsTrigger>
-            <TabsTrigger value="videos">Videos</TabsTrigger>
-            <TabsTrigger value="toolkits">Toolkits</TabsTrigger>
+            <TabsTrigger value="gallery">Gallery</TabsTrigger>
+            <TabsTrigger value="toolkits">GIS Toolkits</TabsTrigger>
           </TabsList>
           
           <TabsContent value="external">
@@ -126,87 +157,108 @@ const ResourcesSection = () => {
             </div>
           </TabsContent>
           
-          <TabsContent value="documents">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {resources.documents.map((doc) => (
-                <Card key={doc.id}>
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-lg">{doc.title}</CardTitle>
-                      <span className="bg-gray-100 text-gray-600 text-xs py-1 px-2 rounded">{doc.type}</span>
-                    </div>
-                    <CardDescription>{doc.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className="text-sm text-gray-500">{doc.size}</span>
-                        <span className="ml-2 bg-geo-blue-light text-geo-blue-dark text-xs py-1 px-2 rounded-full">{doc.category}</span>
+          <TabsContent value="gallery">
+            <div className="space-y-12">
+              {/* Photos Section */}
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                  <Camera className="text-geo-green" />
+                  Photos
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {resources.gallery.photos.map((photo) => (
+                    <Card key={photo.id} className="overflow-hidden">
+                      <div className="aspect-video relative">
+                        <img 
+                          src={photo.thumbnail} 
+                          alt={photo.title} 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <Button size="sm" variant="outline" className="flex items-center gap-1">
-                        <Download size={16} />
-                        <span>Download</span>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="videos">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {resources.videos.map((video) => (
-                <Card key={video.id} className="overflow-hidden">
-                  <div className="aspect-video relative">
-                    <img 
-                      src={video.thumbnail} 
-                      alt={video.title} 
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
-                        <Video className="text-geo-green" />
+                      <CardHeader>
+                        <CardTitle className="text-lg">{photo.title}</CardTitle>
+                        <CardDescription>{photo.description}</CardDescription>
+                      </CardHeader>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Videos Section */}
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                  <Video className="text-geo-green" />
+                  Videos
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {resources.gallery.videos.map((video) => (
+                    <Card key={video.id} className="overflow-hidden">
+                      <div className="aspect-video relative">
+                        <img 
+                          src={video.thumbnail} 
+                          alt={video.title} 
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                          <div className="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
+                            <Video className="text-geo-green" />
+                          </div>
+                        </div>
+                        <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs py-1 px-2 rounded">
+                          {video.duration}
+                        </div>
                       </div>
-                    </div>
-                    <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs py-1 px-2 rounded">
-                      {video.duration}
-                    </div>
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{video.title}</CardTitle>
-                    <CardDescription>{video.description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
+                      <CardHeader>
+                        <CardTitle className="text-lg">{video.title}</CardTitle>
+                        <CardDescription>{video.description}</CardDescription>
+                      </CardHeader>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             </div>
           </TabsContent>
           
           <TabsContent value="toolkits">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {resources.toolkits.map((toolkit) => (
-                <Card key={toolkit.id}>
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <div className="bg-geo-earth-light p-3 rounded-full">
-                        <FileText className="text-geo-earth-dark" />
+            <div>
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-semibold mb-4 flex items-center justify-center gap-2">
+                  <Map className="text-geo-green" />
+                  Professional GIS Toolkits
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Essential GIS tools and platforms for geographic analysis, mapping, and spatial data visualization
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {resources.toolkits.map((toolkit) => (
+                  <Card key={toolkit.id} className="overflow-hidden transition-all hover:shadow-lg hover:scale-105">
+                    <CardHeader className="text-center">
+                      <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                        <img 
+                          src={toolkit.icon} 
+                          alt={toolkit.title} 
+                          className="w-full h-full object-contain"
+                        />
                       </div>
-                      <div>
-                        <CardTitle className="text-lg">{toolkit.title}</CardTitle>
-                        <CardDescription>{toolkit.description}</CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">{toolkit.items} resources included</span>
-                      <Button size="sm" className="bg-geo-earth hover:bg-geo-earth-dark">
-                        Access Toolkit
+                      <CardTitle className="text-lg">{toolkit.title}</CardTitle>
+                      <span className="inline-block bg-geo-blue-light text-geo-blue-dark text-xs py-1 px-3 rounded-full">
+                        {toolkit.category}
+                      </span>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                      <CardDescription className="text-sm mb-4">{toolkit.description}</CardDescription>
+                      <Button 
+                        className="w-full bg-geo-green hover:bg-geo-green-dark"
+                        onClick={() => window.open(toolkit.url, '_blank')}
+                      >
+                        Launch Tool <ExternalLink size={16} className="ml-2" />
                       </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </TabsContent>
         </Tabs>
