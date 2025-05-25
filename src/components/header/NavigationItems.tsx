@@ -21,7 +21,7 @@ export const resourceItems = [
 // Main navigation items
 export const navItems = [
   { name: "Home", url: "/" },
-  { name: "News", url: "#news" },
+  { name: "Explore Hub", url: "#explore-hub" },
   { name: "Partners", url: "#partners" },
   { name: "Join Us", url: "/join-us" },
 ];

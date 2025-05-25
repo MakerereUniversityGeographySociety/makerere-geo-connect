@@ -12,7 +12,7 @@ const Logo = () => {
       />
       <div className="block">
         <p className="font-heading font-semibold text-white text-sm md:text-base">Makerere University</p>
-        <p className="font-heading font-semibold text-geo-green-light -mt-1 text-sm md:text-base">Geography Society</p>
+        <p className="font-heading font-semibold text-white text-sm md:text-base">Geography Society</p>
       </div>
     </Link>
   );
