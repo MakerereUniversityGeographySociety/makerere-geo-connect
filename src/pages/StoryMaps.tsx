@@ -1,6 +1,22 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
+
+const storyMapsList = [
+  {
+    title: "Field Study Trip to Mabamba Wetland",
+    url: "https://arcg.is/159W1W",
+    description: "An interactive map detailing our field study trip to the Mabamba Wetland, a key Ramsar site, highlighting biodiversity and conservation efforts."
+  },
+  {
+    title: "Weekly Story Map",
+    url: "https://arcg.is/aT15m0",
+    description: "Our featured story map of the week. This edition explores urban development patterns in Kampala and their environmental impact."
+  }
+];
 
 const StoryMaps = () => {
   return (
@@ -16,36 +32,23 @@ const StoryMaps = () => {
                 to visualize geographical data and present compelling narratives about our environment.
               </p>
               
-              <div className="space-y-12">
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">Eastern Uganda Land Cover Analysis</h2>
-                  <div className="aspect-[16/9] w-full mb-4 border border-gray-200 rounded-lg overflow-hidden">
-                    <iframe 
-                      src="https://storymaps.arcgis.com/stories/7d14a5db3c9f48b297f496662d5d537f" 
-                      width="100%" 
-                      height="500px" 
-                      frameBorder="0" 
-                      allowFullScreen 
-                      allow="geolocation"
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">Urban Development Patterns</h2>
-                  <div className="aspect-[16/9] w-full mb-4 border border-gray-200 rounded-lg overflow-hidden">
-                    <iframe 
-                      src="https://storymaps.arcgis.com/stories/eb909117775a4dccab597c1a17627e69" 
-                      width="100%" 
-                      height="500px" 
-                      frameBorder="0" 
-                      allowFullScreen 
-                      allow="geolocation"
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {storyMapsList.map((storyMap) => (
+                  <Card key={storyMap.title} className="flex flex-col">
+                    <CardHeader>
+                      <CardTitle>{storyMap.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex flex-col flex-grow">
+                      <CardDescription className="flex-grow mb-4">{storyMap.description}</CardDescription>
+                      <Button
+                        onClick={() => window.open(storyMap.url, "_blank", "noopener,noreferrer")}
+                        className="w-full"
+                      >
+                        Open Story Map <ExternalLink className="ml-2 h-4 w-4" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
