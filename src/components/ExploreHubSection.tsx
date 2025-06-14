@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -73,12 +74,16 @@ const ExploreHubSection = () => {
           {/* Spatial Media Hub */}
           <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-4 p-3 bg-geo-green/10 rounded-full w-fit">
-                <Globe className="h-8 w-8 text-geo-green" />
+              <div className="mx-auto mb-4 flex items-center justify-center bg-geo-green/10 rounded-full w-[64px] h-[64px] overflow-hidden">
+                <img
+                  src="/lovable-uploads/b5660d25-3fe7-4b5e-b152-1c68f1dc0681.png"
+                  alt="Spatial Media Hub Icon"
+                  className="object-contain w-12 h-12"
+                />
               </div>
               <CardTitle className="text-2xl text-geo-green">Spatial Media Hub</CardTitle>
               <CardDescription className="text-base">
-                Our Society's Editorial Platform
+                Our Society&apos;s Editorial Platform
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
@@ -93,8 +98,17 @@ const ExploreHubSection = () => {
                 <Badge className="bg-geo-green/10 text-geo-green hover:bg-geo-green/20">#Mapping</Badge>
                 <Badge className="bg-geo-green/10 text-geo-green hover:bg-geo-green/20">#Content</Badge>
               </div>
-              <Button className="bg-geo-green hover:bg-geo-green-dark text-white px-8 py-3">
-                Join Spatial Hub
+              <Button 
+                className="bg-geo-green hover:bg-geo-green-dark text-white px-8 py-3"
+                asChild
+              >
+                <a 
+                  href="https://chat.whatsapp.com/CQ0nVX7La5HL9eCCh3E74T"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join Spatial Hub
+                </a>
               </Button>
             </CardContent>
           </Card>

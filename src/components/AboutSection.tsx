@@ -2,8 +2,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutSection = () => {
-  // Updated committee members data with real members
+  // Rearranged committee members: Patron comes first
   const committeeMembers = [
+    { 
+      name: "Dr. Nseka Denis", 
+      position: "Patron", 
+      image: "/lovable-uploads/b5660d25-3fe7-4b5e-b152-1c68f1dc0681.png" 
+    },
     { 
       name: "Muyinza Joel Robert", 
       position: "President", 
@@ -39,7 +44,7 @@ const AboutSection = () => {
 
           <div>
             <h3 className="text-2xl font-semibold mb-4">Committee Members</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {committeeMembers.map((member, index) => (
                 <Card key={index} className="overflow-hidden">
                   <CardContent className="p-0">
