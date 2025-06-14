@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Globe, Eye, Satellite, CloudRain, Trees, Wind, Leaf, Sun } from "lucide-react";
+import { Globe, Sun } from "lucide-react";
 
 const ExploreHubSection = () => {
   const earthPulseTools = [
@@ -15,42 +15,42 @@ const ExploreHubSection = () => {
     {
       name: "NASA Eyes",
       description: "Real-time Earth observation from NASA satellites",
-      icon: Eye,
+      icon: "/lovable-uploads/64102cef-bf9a-4fa5-bd3a-826907ad91c9.png",
       url: "https://eyes.nasa.gov/apps/earth",
       type: 'link'
     },
     {
       name: "NASA World View",
       description: "Interactive exploration of satellite imagery",
-      icon: Satellite,
+      icon: "/lovable-uploads/f39ba7e2-af3b-41aa-991d-82c5841fe10e.png",
       url: "https://worldview.earthdata.nasa.gov/",
       type: 'link'
     },
     {
       name: "Open Weather Map",
       description: "Global weather data and forecasting",
-      icon: CloudRain,
+      icon: "/lovable-uploads/75971db3-49dc-48c1-a3dc-fe4997c374c2.png",
       url: "https://openweathermap.org/",
       type: 'link'
     },
     {
       name: "Global Forest Watch",
       description: "Monitor forests and land use changes worldwide",
-      icon: Trees,
+      icon: "/lovable-uploads/693d8406-4de3-46d2-8e99-88e26438229a.png",
       url: "https://www.globalforestwatch.org/",
       type: 'link'
     },
     {
       name: "Global Wind Map",
       description: "Real-time global wind patterns visualization",
-      icon: Wind,
+      icon: "/lovable-uploads/9387d83b-1170-4432-967e-b87e30291fb3.png",
       url: "https://earth.nullschool.net/",
       type: 'link'
     },
     {
       name: "Carbon Footprint",
       description: "Calculate and track environmental impact",
-      icon: Leaf,
+      icon: "/lovable-uploads/d6e1666f-a6d5-4f88-bc34-32067049979d.png",
       url: "https://www.carbonfootprint.com/",
       type: 'link'
     }
@@ -173,7 +173,11 @@ const ExploreHubSection = () => {
               <Card key={tool.name} className="bg-white shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto mb-3 p-2 bg-blue-500/10 rounded-full w-fit">
-                    <tool.icon className="h-6 w-6 text-blue-600" />
+                    {typeof tool.icon === 'string' ? (
+                      <img src={tool.icon} alt={`${tool.name} logo`} className="h-6 w-6 object-contain" />
+                    ) : (
+                      <tool.icon className="h-6 w-6 text-blue-600" />
+                    )}
                   </div>
                   <CardTitle className="text-lg">{tool.name}</CardTitle>
                   <CardDescription className="text-sm">{tool.description}</CardDescription>
