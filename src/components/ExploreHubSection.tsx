@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -71,9 +70,9 @@ const ExploreHubSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Spatial Media Hub */}
+          {/* Spatial Media Hub - illustration image removed */}
           <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-            <CardContent className="flex flex-col-reverse lg:flex-row items-center lg:items-stretch p-6 gap-8">
+            <CardContent className="flex flex-col items-center lg:items-stretch p-6 gap-8">
               {/* Textual info */}
               <div className="flex-1 flex flex-col justify-center">
                 <div>
@@ -115,15 +114,7 @@ const ExploreHubSection = () => {
                   </Button>
                 </div>
               </div>
-              {/* Illustration */}
-              <div className="flex-1 flex items-center justify-center mb-6 lg:mb-0">
-                <img
-                  src="/lovable-uploads/ac585d2b-726f-423d-9684-231fb14c6f8c.png"
-                  alt="Spatial Media Illustration"
-                  className="object-contain rounded-lg shadow-md w-full max-w-[340px] lg:max-w-[340px] aspect-[1/1] border border-gray-200"
-                  loading="lazy"
-                />
-              </div>
+              {/* Illustration removed */}
             </CardContent>
           </Card>
 
@@ -206,4 +197,3 @@ const ExploreHubSection = () => {
 };
 
 export default ExploreHubSection;
-
