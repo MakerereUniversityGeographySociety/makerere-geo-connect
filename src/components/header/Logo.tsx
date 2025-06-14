@@ -10,18 +10,12 @@ const Logo = () => {
         alt="Makerere University Geography Society Logo" 
         className="h-10 w-auto md:h-12"
       />
-      <div className="block leading-tight">
-        <span className="font-heading font-semibold text-white text-xs sm:text-sm md:text-base block">
-          Makerere
+      <div className="leading-tight">
+        <span className="font-heading font-semibold text-white text-sm md:text-base block">
+          Makerere University
         </span>
-        <span className="font-heading font-semibold text-white text-xs sm:text-sm md:text-base block">
-          University Geography
-        </span>
-        <span className="font-heading font-semibold text-white text-xs sm:text-sm md:text-base block">
-          Society
-        </span>
-        <span className="font-heading font-medium text-white/90 text-xs hidden sm:block mt-1">
-          United to Conserve Nature
+        <span className="font-heading font-semibold text-white text-sm md:text-base block">
+          Geography Society
         </span>
       </div>
     </Link>
