@@ -184,8 +184,6 @@ const ExploreHubSection = () => {
                 </CardHeader>
                 <CardContent className="pt-0 text-center">
                   <Button 
-                    variant="outline" 
-                    className="border-blue-500 text-blue-600 hover:bg-blue-50"
                     onClick={() => window.open(tool.url, '_blank')}
                   >
                     Explore Tool
