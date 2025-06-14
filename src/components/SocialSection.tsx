@@ -3,7 +3,6 @@ import React from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import SocialLinkCards from "./social/SocialLinks";
 import InstagramPosts from "./social/InstagramPosts";
-import TwitterPosts from "./social/TwitterPosts";
 import WhatsAppButton from "./social/WhatsAppButton";
 
 const SocialSection = () => {
@@ -20,9 +19,6 @@ const SocialSection = () => {
         <div className="mt-8 md:mt-12">
           <InstagramPosts />
         </div>
-        
-        {/* Twitter/X Posts Section */}
-        <TwitterPosts />
         
         <WhatsAppButton />
       </div>
