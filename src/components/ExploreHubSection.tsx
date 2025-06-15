@@ -79,7 +79,7 @@ const ExploreHubSection = () => {
                 <div>
                   <div className="mx-auto mb-4 flex items-center justify-center bg-geo-green/10 rounded-full w-[64px] h-[64px] overflow-hidden">
                     <img
-                      src="/lovable-uploads/b5660d25-3fe7-4b5e-b152-1c68f1dc0681.png"
+                      src="/lovable-uploads/c65dd880-d086-45ba-a929-b2edd133c4c4.png"
                       alt="Spatial Media Hub Icon"
                       className="object-contain w-12 h-12"
                     />
