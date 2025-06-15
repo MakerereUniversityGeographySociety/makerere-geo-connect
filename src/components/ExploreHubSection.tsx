@@ -123,7 +123,11 @@ const ExploreHubSection = () => {
           <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
             <CardHeader className="text-center">
               <div className="mx-auto mb-4 p-3 bg-blue-500/10 rounded-full w-fit">
-                <Globe className="h-8 w-8 text-blue-600" />
+                <img
+                  src="/lovable-uploads/75afb1e0-8fe0-499d-87d3-a78ffdfe94bc.png"
+                  alt="Earth Pulse Hub Icon"
+                  className="h-8 w-8 object-contain"
+                />
               </div>
               <CardTitle className="text-2xl text-blue-600">Earth Pulse Hub</CardTitle>
               <CardDescription className="text-base">
