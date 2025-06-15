@@ -1,4 +1,3 @@
-
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
@@ -86,9 +85,9 @@ const Footer = () => {
             © {new Date().getFullYear()} Makerere University Geography Society. All rights reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="text-sm text-white/70 hover:text-white">Privacy Policy</a>
-            <a href="#" className="text-sm text-white/70 hover:text-white">Terms of Use</a>
-            <a href="#" className="text-sm text-white/70 hover:text-white">Accessibility</a>
+            <a href="/privacy-policy" className="text-sm text-white/70 hover:text-white">Privacy Policy</a>
+            <a href="/terms-of-use" className="text-sm text-white/70 hover:text-white">Terms of Use</a>
+            <a href="/accessibility" className="text-sm text-white/70 hover:text-white">Accessibility</a>
           </div>
         </div>
       </div>
