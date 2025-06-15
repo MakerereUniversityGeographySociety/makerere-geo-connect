@@ -178,10 +178,10 @@ const ExploreHubSection = () => {
               <Card key={tool.name} className="bg-white shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto mb-3 p-2 bg-blue-500/10 rounded-full w-fit">
-                    {typeof tool.icon === 'string' ? (
+                    {'icon' in tool && typeof tool.icon === 'string' ? (
                       <img src={tool.icon} alt={`${tool.name} logo`} className="h-6 w-6 object-contain" />
                     ) : (
-                      <tool.icon className="h-6 w-6 text-blue-600" />
+                      <Globe className="h-6 w-6 text-blue-600" />
                     )}
                   </div>
                   <CardTitle className="text-lg">{tool.name}</CardTitle>
