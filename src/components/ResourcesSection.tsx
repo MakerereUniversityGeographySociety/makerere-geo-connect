@@ -56,6 +56,18 @@ const gisToolKit = [
     description: "A planetary-scale platform for Earth science data analysis and visualization.",
     url: "https://code.earthengine.google.com/",
     icon: "/lovable-uploads/689ace33-75b4-432a-923b-dea6a1c4ca76.png"
+  },
+  {
+    title: "QGIS",
+    description: "Open-source Geographic Information System (GIS) for mapping and spatial analysis.",
+    url: "https://qgis.org/",
+    icon: "/lovable-uploads/9e47b97e-4346-490e-bf14-9b75b4869ad8.png"
+  },
+  {
+    title: "Cesium",
+    description: "Platform for creating 3D geospatial applications and interactive globe visualization.",
+    url: "https://cesium.com/",
+    icon: "/lovable-uploads/007e42d3-7e93-4721-ade9-15953a500d39.png"
   }
 ];
 
