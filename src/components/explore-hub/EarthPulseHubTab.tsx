@@ -37,7 +37,7 @@ const EarthPulseHubTab = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              Explore Platform
+              Explore Tools
             </a>
           </Button>
         </div>
@@ -47,3 +47,4 @@ const EarthPulseHubTab = () => (
 );
 
 export default EarthPulseHubTab;
+
