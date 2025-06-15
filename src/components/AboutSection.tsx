@@ -44,20 +44,23 @@ const AboutSection = () => {
 
           <div>
             <h3 className="text-2xl font-semibold mb-4">Committee Members</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {committeeMembers.map((member, index) => (
-                <Card key={index} className="overflow-hidden">
+                <Card 
+                  key={index} 
+                  className="overflow-hidden max-w-[230px] mx-auto shadow hover:scale-105 transition-transform duration-200"
+                >
                   <CardContent className="p-0">
-                    <div className="aspect-square">
+                    <div className="aspect-square w-full h-[130px] bg-gray-100">
                       <img 
                         src={member.image} 
                         alt={member.name} 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="p-4">
-                      <h4 className="font-semibold">{member.name}</h4>
-                      <p className="text-sm text-gray-600">{member.position}</p>
+                    <div className="p-3">
+                      <h4 className="font-semibold text-base">{member.name}</h4>
+                      <p className="text-xs text-gray-600">{member.position}</p>
                     </div>
                   </CardContent>
                 </Card>
