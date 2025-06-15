@@ -1,55 +1,60 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
-const SpatialMediaHubTab = () => {
-  return (
-    <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
-      <CardContent className="flex flex-col items-center lg:items-stretch p-6 gap-8">
-        <div className="flex-1 flex flex-col justify-center">
-          <div>
-            <div className="mx-auto mb-4 flex items-center justify-center bg-geo-green/10 rounded-full w-[64px] h-[64px] overflow-hidden">
-              <img
-                src="/lovable-uploads/c65dd880-d086-45ba-a929-b2edd133c4c4.png"
-                alt="Spatial Media Hub Icon"
-                className="object-contain w-12 h-12"
-              />
-            </div>
-            <CardTitle className="text-2xl text-geo-green text-center lg:text-left">Spatial Media Hub</CardTitle>
-            <CardDescription className="text-base text-center lg:text-left">
-              Our Society&apos;s Editorial Platform
-            </CardDescription>
-          </div>
-          <p className="text-gray-700 mb-6 leading-relaxed mt-6 text-center lg:text-left">
-            Empowering educators, writers, social media content creators, mappers, developers, and other talents 
-            in our society to leverage mapping, GIS tools, and geospatial technologies for compelling geographic 
-            stories and active spatial problem solving.
-          </p>
-          <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-6">
-            <Badge className="bg-geo-green/10 text-geo-green hover:bg-geo-green/20">#Storytelling</Badge>
-            <Badge className="bg-geo-green/10 text-geo-green hover:bg-geo-green/20">#GIS</Badge>
-            <Badge className="bg-geo-green/10 text-geo-green hover:bg-geo-green/20">#Mapping</Badge>
-            <Badge className="bg-geo-green/10 text-geo-green hover:bg-geo-green/20">#Content</Badge>
-          </div>
-          <div className="flex justify-center lg:justify-start">
-            <Button 
-              className="bg-geo-green hover:bg-geo-green-dark text-white px-8 py-3"
-              asChild
+const SpatialMediaHubTab = () => (
+  <div className="flex justify-center items-center h-full px-4 py-6">
+    <div className="max-w-xl w-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+      {/* Green Header */}
+      <div className="flex items-center gap-3 bg-geo-green rounded-t-xl px-6 py-4">
+        <img
+          src="/lovable-uploads/c65dd880-d086-45ba-a929-b2edd133c4c4.png"
+          alt="Spatial Media Hub Icon"
+          className="w-10 h-10 rounded-full bg-white p-1 object-contain"
+        />
+        <h2 className="text-xl md:text-2xl font-bold text-white">Spatial Media Hub</h2>
+      </div>
+      {/* Card Image */}
+      <div className="w-full h-48 bg-geo-green/10 flex justify-center items-center">
+        <img
+          src="/lovable-uploads/c65dd880-d086-45ba-a929-b2edd133c4c4.png"
+          alt="Spatial Media Hub Illustration"
+          className="object-contain h-32"
+        />
+      </div>
+      {/* Description and buttons */}
+      <div className="px-6 py-4 flex flex-col gap-4">
+        <p className="text-gray-700 text-base text-center">
+          Empowering educators, writers, social media content creators, mappers, developers, and other talents in our society to leverage mapping, GIS tools, and geospatial technologies for compelling geographic stories and active spatial problem solving.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Button
+            className="bg-geo-green hover:bg-geo-green-dark text-white w-full sm:w-auto"
+            asChild
+          >
+            <a 
+              href="https://chat.whatsapp.com/CQ0nVX7La5HL9eCCh3E74T"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a 
-                href="https://chat.whatsapp.com/CQ0nVX7La5HL9eCCh3E74T"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Join Spatial Hub
-              </a>
-            </Button>
-          </div>
+              Join Spatial Hub
+            </a>
+          </Button>
+          <Button
+            className="bg-geo-green/80 hover:bg-geo-green-dark text-white w-full sm:w-auto"
+            asChild
+          >
+            <a 
+              href="https://www.linkedin.com/showcase/spatial-media-hub/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Platform
+            </a>
+          </Button>
         </div>
-      </CardContent>
-    </Card>
-  );
-};
+      </div>
+    </div>
+  </div>
+);
 
 export default SpatialMediaHubTab;
