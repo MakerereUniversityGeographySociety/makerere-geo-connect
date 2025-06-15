@@ -56,27 +56,6 @@ const maps = [
     description: "An in-depth map of the Nyamwamba River Catchment area, highlighting key geographical features and points of interest.",
     url: "https://www.google.com/maps/d/edit?mid=1T6RDIl4Jlbp4QSpA95tyV8KeM8l12gU&usp=sharing",
     thumbnail: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-  },
-  {
-    id: 2,
-    title: "Kampala Urban Development",
-    description: "Visualizing the urban sprawl and development patterns in Kampala over the last two decades.",
-    url: "https://arcg.is/aT15m0",
-    thumbnail: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-  },
-  {
-    id: 3,
-    title: "Mabamba Wetland Biodiversity",
-    description: "An interactive guide to the rich biodiversity of the Mabamba Wetland, a crucial Ramsar site.",
-    url: "https://arcg.is/159W1W",
-    thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-  },
-   {
-    id: 4,
-    title: "Rwenzori Mountains National Park",
-    description: "A detailed map showcasing the trails, peaks, and unique flora and fauna of the Rwenzori Mountains.",
-    url: "https://www.google.com/maps/d/viewer?mid=1_h-a2J9f3D5eK_pG3nF6wX9R9cQ&hl=en_US",
-    thumbnail: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
   }
 ];
 
@@ -146,6 +125,9 @@ const ResourcesSection = () => {
           </TabsContent>
           
           <TabsContent value="map-gallery" className="mt-8">
+            <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+              The Map Gallery displays the three best maps of the week from either the editorial team's Spatial Media Hub or society members' map works and projects.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {maps.map((map) => (
                 <Card key={map.id} className="flex flex-col overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
