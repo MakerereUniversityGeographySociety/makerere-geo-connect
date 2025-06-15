@@ -9,7 +9,8 @@ const PartnersSection = () => {
     {
       id: 1,
       name: "Department of Geography Geo-Informatics and Climatic Sciences",
-      logo: "/lovable-uploads/6fdc2455-40a5-4f3d-a2e1-a308470511ff.png",
+      logo: "/lovable-uploads/60a5ccaf-cd71-46be-8411-83f4dc63fc7c.png",
+      website: "https://geography.mak.ac.ug/",
       description: "The academic home of geography studies at Makerere University, providing expertise and resources for geographical research and education."
     },
     {
@@ -23,13 +24,8 @@ const PartnersSection = () => {
       name: "Forestry Association of Makerere University",
       logo: "/lovable-uploads/0848f4c3-c31d-489c-83e6-2888cdbddeaf.png",
       description: "Promotes sustainable forestry practices and environmental conservation through education and community outreach."
-    },
-    {
-      id: 4,
-      name: "University Geographic Society",
-      logo: "/lovable-uploads/a9ffb68a-8422-49b1-af05-919022c3b7ee.png",
-      description: "Network of university geography departments fostering academic cooperation and research excellence."
     }
+    // Removed the University Geographic Society as requested
   ];
 
   const [selectedPartner, setSelectedPartner] = useState(null);
@@ -43,17 +39,36 @@ const PartnersSection = () => {
           {partners.map((partner) => (
             <Dialog key={partner.id}>
               <DialogTrigger asChild>
-                <div 
-                  className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow"
-                  onClick={() => setSelectedPartner(partner)}
-                  style={{ width: '200px', height: '200px' }}
-                >
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
+                {
+                  partner.website ? (
+                    <a
+                      href={partner.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow"
+                      onClick={() => setSelectedPartner(partner)}
+                      style={{ width: '200px', height: '200px' }}
+                    >
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </a>
+                  ) : (
+                    <div 
+                      className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow"
+                      onClick={() => setSelectedPartner(partner)}
+                      style={{ width: '200px', height: '200px' }}
+                    >
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                  )
+                }
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
                 <DialogHeader>
@@ -91,3 +106,4 @@ const PartnersSection = () => {
 };
 
 export default PartnersSection;
+
