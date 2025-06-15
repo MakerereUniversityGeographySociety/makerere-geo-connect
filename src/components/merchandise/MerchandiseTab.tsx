@@ -40,19 +40,6 @@ const ProductCard = ({ name, description, price, imageSrc, formLink }: ProductCa
   );
 };
 
-const ContactSection = () => {
-  return (
-    <div className="text-center mt-8">
-      <p className="text-sm text-gray-500 mb-4">
-        Contact the Merchandise Officer for bulk orders or custom items
-      </p>
-      <Button variant="outline" className="border-geo-green text-geo-green hover:bg-geo-green/10">
-        Contact for Merchandise
-      </Button>
-    </div>
-  );
-};
-
 const MerchandiseTab = () => {
   const products = [
     {
@@ -85,10 +72,9 @@ const MerchandiseTab = () => {
           />
         ))}
       </div>
-      
-      <ContactSection />
     </div>
   );
 };
 
 export default MerchandiseTab;
+
