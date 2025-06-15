@@ -54,10 +54,10 @@ const SocialLinkCards = () => {
             </div>
             <h3 className="mt-4 font-semibold text-lg">{social.platform}</h3>
             <p className="text-sm text-gray-600 mt-1">{social.handle}</p>
-            <Button 
-              variant="outline" 
-              className="mt-4"
+            <Button
+              className={`mt-4 w-full ${social.color} text-white hover:opacity-90 transition-colors border-none shadow`}
               onClick={() => window.open(social.url, '_blank')}
+              variant="default"
             >
               Follow Us
             </Button>
@@ -69,3 +69,4 @@ const SocialLinkCards = () => {
 };
 
 export default SocialLinkCards;
+
