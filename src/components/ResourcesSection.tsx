@@ -171,11 +171,12 @@ const ResourcesSection = () => {
             <div className="flex flex-wrap justify-center gap-8">
               {maps.map((map) => (
                 <Card key={map.id} className="w-full max-w-md flex flex-col overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
-                  <div className="aspect-video relative">
+                  <div className="relative w-full max-h-44 overflow-hidden">
                     <img 
                       src={map.thumbnail} 
                       alt={map.title} 
-                      className="w-full h-full object-cover"
+                      className="w-full object-cover object-center"
+                      style={{ maxHeight: '11rem', minHeight: '9rem', height: '100%' }}
                     />
                   </div>
                   <CardHeader>
