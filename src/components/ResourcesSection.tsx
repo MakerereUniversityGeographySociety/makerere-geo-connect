@@ -1,30 +1,23 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpenCheck, ExternalLink, Wrench, FolderKanban, Map } from "lucide-react";
+import { BookOpenCheck, ExternalLink, Wrench, FolderKanban, Map, Book } from "lucide-react";
 
 const externalResources = [
   {
-    title: "National Geographic",
-    description: "A global leader in geography, cartography and exploration.",
-    url: "https://www.nationalgeographic.com/",
+    title: "Academic Resources Hub",
+    description: "Comprehensive repository of academic papers, books, and educational resources",
+    url: "https://geo-vault-hub-connect.lovable.app/",
+    icon: "book",
+    buttonText: "Visit Resource"
   },
   {
-    title: "Esri",
-    description: "International supplier of geographic information system software.",
-    url: "https://www.esri.com/",
-  },
-  {
-    title: "Royal Geographical Society",
-    description: "The UK's learned society and professional body for geography.",
-    url: "https://www.rgs.org/",
-  },
-  {
-    title: "OpenStreetMap",
-    description: "A collaborative project to create a free editable map of the world.",
-    url: "https://www.openstreetmap.org/",
-  },
+    title: "Story Maps",
+    description: "Interactive geographic stories created by our members",
+    url: "/story-maps",
+    icon: "map",
+    buttonText: "View Resource"
+  }
 ];
 
 const gisToolKit = [
@@ -102,17 +95,28 @@ const ResourcesSection = () => {
           </TabsList>
 
           <TabsContent value="external-resources" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {externalResources.map((resource) => (
-                <Card key={resource.title} className="flex flex-col text-center hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{resource.title}</CardTitle>
+                <Card key={resource.title} className="flex flex-col text-center hover:shadow-lg transition-shadow overflow-hidden">
+                  <CardHeader className="bg-geo-green text-white py-6">
+                    <div className="flex justify-center mb-4">
+                      {resource.icon === "book" ? (
+                        <Book className="h-12 w-12" />
+                      ) : (
+                        <Map className="h-12 w-12" />
+                      )}
+                    </div>
+                    <CardTitle className="text-xl text-white">{resource.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="flex flex-col flex-grow">
-                    <p className="flex-grow mb-4 text-sm text-gray-600">{resource.description}</p>
-                    <Button asChild size="sm" className="w-full bg-geo-green hover:bg-geo-green-dark">
+                  <CardContent className="flex flex-col flex-grow p-6">
+                    <p className="flex-grow mb-6 text-gray-600">{resource.description}</p>
+                    <Button 
+                      asChild 
+                      size="lg" 
+                      className="w-full bg-blue-900 hover:bg-blue-800 text-white"
+                    >
                       <a href={resource.url} target="_blank" rel="noopener noreferrer">
-                        Visit Site <ExternalLink className="ml-2 h-4 w-4" />
+                        {resource.buttonText} <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </CardContent>

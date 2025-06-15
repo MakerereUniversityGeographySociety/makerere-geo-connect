@@ -42,7 +42,7 @@ const StoryMaps = () => {
                       <CardDescription className="flex-grow mb-4">{storyMap.description}</CardDescription>
                       <Button
                         onClick={() => window.open(storyMap.url, "_blank", "noopener,noreferrer")}
-                        className="w-full"
+                        className="w-full bg-blue-900 hover:bg-blue-800"
                       >
                         Open Story Map <ExternalLink className="ml-2 h-4 w-4" />
                       </Button>
