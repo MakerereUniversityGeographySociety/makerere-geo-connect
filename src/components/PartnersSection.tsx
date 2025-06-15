@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -95,7 +94,11 @@ const PartnersSection = () => {
             className="border-geo-green text-geo-green hover:bg-geo-green hover:text-white"
             asChild
           >
-            <a href="mailto:mugs.universitygeographysociety@gmail.com?subject=Partnership%20Inquiry&body=I%20am%20interested%20in%20becoming%20a%20partner%20with%20Makerere%20University%20Geography%20Society.%20Please%20provide%20more%20information.">
+            <a
+              href="https://forms.zohopublic.com/mugsuniversitygeographysocigm1/form/PartnershipInquiryForm/formperma/DSJ-r9ugUuCfQk2mZej5IVxXQCuFr9SzEw9ImRqul84"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Collaborate
             </a>
           </Button>
@@ -106,4 +109,3 @@ const PartnersSection = () => {
 };
 
 export default PartnersSection;
-
