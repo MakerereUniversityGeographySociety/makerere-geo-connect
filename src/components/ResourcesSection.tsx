@@ -128,9 +128,9 @@ const ResourcesSection = () => {
             <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
               The Map Gallery displays the three best maps of the week from either the editorial team's Spatial Media Hub or society members' map works and projects.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="flex flex-wrap justify-center gap-8">
               {maps.map((map) => (
-                <Card key={map.id} className="flex flex-col overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
+                <Card key={map.id} className="w-full max-w-md flex flex-col overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
                   <div className="aspect-video relative">
                     <img 
                       src={map.thumbnail} 
