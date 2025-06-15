@@ -16,9 +16,9 @@ const SpatialMediaHubTab = () => (
       {/* Card Image */}
       <div className="w-full h-48 bg-geo-green/10 flex justify-center items-center">
         <img
-          src="/lovable-uploads/c65dd880-d086-45ba-a929-b2edd133c4c4.png"
+          src="/lovable-uploads/90040d02-9666-4e27-b5a4-050519faa7a7.png"
           alt="Spatial Media Hub Illustration"
-          className="object-contain h-32"
+          className="object-contain h-40"
         />
       </div>
       {/* Description and button */}

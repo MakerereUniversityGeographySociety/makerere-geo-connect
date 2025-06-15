@@ -16,9 +16,9 @@ const EarthPulseHubTab = () => (
       {/* Card Image */}
       <div className="w-full h-48 bg-blue-500/10 flex justify-center items-center">
         <img
-          src="/lovable-uploads/5276b34d-32a6-46e7-bbc5-a574b5290824.png"
+          src="/lovable-uploads/f3671093-e7a1-4987-82e9-b6f891ee50bc.png"
           alt="Earth Pulse Illustration"
-          className="object-contain h-32"
+          className="object-contain h-40"
         />
       </div>
       {/* Description and button */}
