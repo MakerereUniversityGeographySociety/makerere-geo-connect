@@ -12,19 +12,19 @@ const TOOLS = [
   {
     name: "NASA Earth View",
     icon: <Earth className="text-blue-400" />,
-    url: "https://earthview.earthdata.nasa.gov/",
+    url: "https://worldview.earthdata.nasa.gov/",
     description: "Satellite imagery and data visualizations of Earth's surface direct from NASA.",
   },
   {
     name: "NASA Earth Live",
     icon: <ThermometerSun className="text-yellow-500" />,
-    url: "https://www.ustream.tv/channel/iss-hdev-payload",
+    url: "https://eol.jsc.nasa.gov/esrs/hdev/",
     description: "Live stream: Watch the Earth from space in real-time, right from the International Space Station.",
   },
   {
     name: "NASA Eyes on Earth",
     icon: <Globe className="text-green-700" />,
-    url: "https://eyes.nasa.gov/apps/earth/#/home",
+    url: "https://eyes.nasa.gov/apps/earth",
     description: "Interactive NASA visualization of global environmental data and satellite tracking.",
   },
   {
