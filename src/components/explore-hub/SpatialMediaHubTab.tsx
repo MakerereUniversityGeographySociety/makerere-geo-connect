@@ -21,7 +21,7 @@ const SpatialMediaHubTab = () => (
           className="object-contain h-32"
         />
       </div>
-      {/* Description and buttons */}
+      {/* Description and button */}
       <div className="px-6 py-4 flex flex-col gap-4">
         <p className="text-gray-700 text-base text-center">
           Empowering educators, writers, social media content creators, mappers, developers, and other talents in our society to leverage mapping, GIS tools, and geospatial technologies for compelling geographic stories and active spatial problem solving.
@@ -37,18 +37,6 @@ const SpatialMediaHubTab = () => (
               rel="noopener noreferrer"
             >
               Join Spatial Hub
-            </a>
-          </Button>
-          <Button
-            className="bg-geo-green/80 hover:bg-geo-green-dark text-white w-full sm:w-auto"
-            asChild
-          >
-            <a 
-              href="https://www.linkedin.com/showcase/spatial-media-hub/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Explore Platform
             </a>
           </Button>
         </div>

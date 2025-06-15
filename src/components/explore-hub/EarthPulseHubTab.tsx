@@ -21,7 +21,7 @@ const EarthPulseHubTab = () => (
           className="object-contain h-32"
         />
       </div>
-      {/* Description and buttons */}
+      {/* Description and button */}
       <div className="px-6 py-4 flex flex-col gap-4">
         <p className="text-gray-700 text-base text-center">
           An engaging platform for monitoring and observing key geographical and environmental indicators.
@@ -38,19 +38,6 @@ const EarthPulseHubTab = () => (
               rel="noopener noreferrer"
             >
               Explore Platform
-            </a>
-          </Button>
-          <Button
-            variant="outline"
-            className="w-full sm:w-auto"
-            asChild
-          >
-            <a
-              href="https://chat.whatsapp.com/EG2UzcnxV_wKbvltBveCGi"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join Earth Pulse Hub
             </a>
           </Button>
         </div>
