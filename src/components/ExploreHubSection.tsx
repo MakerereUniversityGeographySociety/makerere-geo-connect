@@ -1,16 +1,17 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Globe, Sun } from "lucide-react";
+import { Globe } from "lucide-react";
 
 const ExploreHubSection = () => {
   const earthPulseTools = [
     {
       name: "Solar System Scope",
       description: "Explore our solar system in 3D interactive view",
-      icon: Sun,
-      embed: '<iframe src="https://www.solarsystemscope.com/iframe" width="500" height="400" style="min-width:500px; min-height: 400px; border: 2px solid #0f5c6e;"></iframe>',
-      type: 'embed'
+      image: "/lovable-uploads/5276b34d-32a6-46e7-bbc5-a574b5290824.png",
+      url: "https://www.solarsystemscope.com/",
+      type: 'card-link'
     },
     {
       name: "NASA Eyes",
@@ -56,7 +57,7 @@ const ExploreHubSection = () => {
     }
   ];
 
-  const solarSystemTool = earthPulseTools.find(tool => tool.type === 'embed');
+  const solarSystemTool = earthPulseTools.find(tool => tool.type === 'card-link');
   const linkTools = earthPulseTools.filter(tool => tool.type === 'link');
 
   return (
@@ -148,23 +149,27 @@ const ExploreHubSection = () => {
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Earth Pulse Tools</h3>
           
-          {/* Solar System Scope Embed */}
+          {/* Solar System Scope Card */}
           {solarSystemTool && (
-            <Card className="mb-8 bg-white shadow-lg">
-              <CardHeader className="text-center">
-                <div className="flex items-center justify-center gap-3 mb-2">
-                  <solarSystemTool.icon className="h-6 w-6 text-orange-500" />
+            <div className="mb-8 flex justify-center">
+              <Card className="max-w-md w-full bg-white shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <a href={solarSystemTool.url} target="_blank" rel="noopener noreferrer">
+                  <img src={solarSystemTool.image} alt={solarSystemTool.name} className="w-full h-auto object-cover" />
+                </a>
+                <CardHeader className="text-center">
                   <CardTitle className="text-xl">{solarSystemTool.name}</CardTitle>
-                </div>
-                <CardDescription>{solarSystemTool.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex justify-center">
-                <div 
-                  className="w-full max-w-2xl"
-                  dangerouslySetInnerHTML={{ __html: solarSystemTool.embed }}
-                />
-              </CardContent>
-            </Card>
+                  <CardDescription>{solarSystemTool.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <Button 
+                    onClick={() => window.open(solarSystemTool.url, '_blank')}
+                    className="w-full"
+                  >
+                    Explore Tool
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           )}
 
           {/* Other Tools Grid */}
