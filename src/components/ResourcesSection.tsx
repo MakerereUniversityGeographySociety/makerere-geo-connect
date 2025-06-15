@@ -1,76 +1,117 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Map } from "lucide-react";
+import { BookOpenCheck, ExternalLink, Wrench, FolderKanban } from "lucide-react";
 
-const maps = [
+const externalResources = [
   {
-    id: 1,
-    title: "Mapping Nyamwamba River Catchment",
-    description: "An in-depth map of the Nyamwamba River Catchment area, highlighting key geographical features and points of interest.",
-    url: "https://www.google.com/maps/d/edit?mid=1T6RDIl4Jlbp4QSpA95tyV8KeM8l12gU&usp=sharing",
-    thumbnail: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    title: "National Geographic",
+    description: "A global leader in geography, cartography and exploration.",
+    url: "https://www.nationalgeographic.com/",
   },
   {
-    id: 2,
-    title: "Kampala Urban Development",
-    description: "Visualizing the urban sprawl and development patterns in Kampala over the last two decades.",
-    url: "https://arcg.is/aT15m0",
-    thumbnail: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    title: "Esri",
+    description: "International supplier of geographic information system software.",
+    url: "https://www.esri.com/",
   },
   {
-    id: 3,
-    title: "Mabamba Wetland Biodiversity",
-    description: "An interactive guide to the rich biodiversity of the Mabamba Wetland, a crucial Ramsar site.",
-    url: "https://arcg.is/159W1W",
-    thumbnail: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    title: "Royal Geographical Society",
+    description: "The UK's learned society and professional body for geography.",
+    url: "https://www.rgs.org/",
   },
-   {
-    id: 4,
-    title: "Rwenzori Mountains National Park",
-    description: "A detailed map showcasing the trails, peaks, and unique flora and fauna of the Rwenzori Mountains.",
-    url: "https://www.google.com/maps/d/viewer?mid=1_h-a2J9f3D5eK_pG3nF6wX9R9cQ&hl=en_US",
-    thumbnail: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+  {
+    title: "OpenStreetMap",
+    description: "A collaborative project to create a free editable map of the world.",
+    url: "https://www.openstreetmap.org/",
+  },
+];
+
+const gisToolKit = [
+  {
+    title: "QGIS",
+    description: "A free and open-source cross-platform desktop geographic information system.",
+    url: "https://qgis.org/",
+  },
+  {
+    title: "ArcGIS Online",
+    description: "A cloud-based mapping and analysis solution from Esri.",
+    url: "https://www.arcgis.com/index.html",
+  },
+  {
+    title: "Google Earth Engine",
+    description: "A planetary-scale platform for Earth science data & analysis.",
+    url: "https://earthengine.google.com/",
+  },
+  {
+    title: "GRASS GIS",
+    description: "A free and open source GIS software suite for geospatial data management.",
+    url: "https://grass.osgeo.org/",
   }
 ];
 
 const ResourcesSection = () => {
   return (
-    <section id="map-gallery" className="py-16 bg-gray-50">
+    <section id="resources" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <Map className="h-10 w-10 mx-auto mb-4 text-geo-green" />
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Map Gallery</h2>
+          <FolderKanban className="h-10 w-10 mx-auto mb-4 text-geo-green" />
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Resource Hub</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Explore compelling maps and models built by our students and members. Each map tells a unique geographic story.
+            Access a curated list of external resources and GIS tools to support your learning and projects.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {maps.map((map) => (
-            <Card key={map.id} className="flex flex-col overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
-              <div className="aspect-video relative">
-                <img 
-                  src={map.thumbnail} 
-                  alt={map.title} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">{map.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col flex-grow">
-                <CardDescription className="flex-grow mb-6">{map.description}</CardDescription>
-                <Button
-                  onClick={() => window.open(map.url, "_blank", "noopener,noreferrer")}
-                  className="w-full bg-geo-green hover:bg-geo-green-dark"
-                >
-                  Explore Map <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Tabs defaultValue="external-resources" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto bg-gray-100 rounded-full p-1">
+            <TabsTrigger value="external-resources" className="data-[state=active]:bg-geo-green data-[state=active]:text-white rounded-full">
+              <BookOpenCheck className="mr-2 h-5 w-5" /> External Resources
+            </TabsTrigger>
+            <TabsTrigger value="gis-toolkit" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full">
+              <Wrench className="mr-2 h-5 w-5" /> GIS Tool Kit
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="external-resources" className="mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {externalResources.map((resource) => (
+                <Card key={resource.title} className="flex flex-col text-center hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{resource.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex flex-col flex-grow">
+                    <p className="flex-grow mb-4 text-sm text-gray-600">{resource.description}</p>
+                    <Button asChild size="sm" className="w-full bg-geo-green hover:bg-geo-green-dark">
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                        Visit Site <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="gis-toolkit" className="mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {gisToolKit.map((tool) => (
+                <Card key={tool.title} className="flex flex-col text-center hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{tool.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex flex-col flex-grow">
+                    <p className="flex-grow mb-4 text-sm text-gray-600">{tool.description}</p>
+                    <Button asChild size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
+                       <a href={tool.url} target="_blank" rel="noopener noreferrer">
+                        Explore Tool <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );

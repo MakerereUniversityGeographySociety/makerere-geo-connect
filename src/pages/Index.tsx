@@ -10,6 +10,7 @@ import ResourcesSection from "@/components/ResourcesSection";
 import SocialSection from "@/components/SocialSection";
 import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
+import MapGallerySection from "@/components/MapGallerySection";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <MerchandiseSection />
         <PartnersSection />
         <ResourcesSection />
+        <MapGallerySection />
         <SocialSection />
         <MapSection />
       </main>
