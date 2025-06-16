@@ -62,6 +62,10 @@ const EarthPulseHubTab = () => (
           src="/lovable-uploads/75afb1e0-8fe0-499d-87d3-a78ffdfe94bc.png"
           alt="Earth Pulse Hub Icon"
           className="w-10 h-10 rounded-full bg-white p-1 object-contain"
+          loading="lazy"
+          decoding="async"
+          width="40"
+          height="40"
         />
         <h2 className="text-xl md:text-2xl font-bold text-white">Earth Pulse Hub</h2>
       </div>
@@ -71,6 +75,10 @@ const EarthPulseHubTab = () => (
           src="/lovable-uploads/f3671093-e7a1-4987-82e9-b6f891ee50bc.png"
           alt="Earth Pulse Illustration"
           className="object-contain h-40"
+          loading="lazy"
+          decoding="async"
+          width="160"
+          height="160"
         />
       </div>
       {/* Description */}

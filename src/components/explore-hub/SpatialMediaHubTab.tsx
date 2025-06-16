@@ -10,6 +10,10 @@ const SpatialMediaHubTab = () => (
           src="/lovable-uploads/c65dd880-d086-45ba-a929-b2edd133c4c4.png"
           alt="Spatial Media Hub Icon"
           className="w-10 h-10 rounded-full bg-white p-1 object-contain"
+          loading="lazy"
+          decoding="async"
+          width="40"
+          height="40"
         />
         <h2 className="text-xl md:text-2xl font-bold text-white">Spatial Media Hub</h2>
       </div>
@@ -19,6 +23,10 @@ const SpatialMediaHubTab = () => (
           src="/lovable-uploads/90040d02-9666-4e27-b5a4-050519faa7a7.png"
           alt="Spatial Media Hub Illustration"
           className="object-contain h-40"
+          loading="lazy"
+          decoding="async"
+          width="160"
+          height="160"
         />
       </div>
       {/* Description and button */}
