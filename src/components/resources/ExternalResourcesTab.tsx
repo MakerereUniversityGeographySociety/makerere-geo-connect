@@ -2,6 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Book, Map, ExternalLink } from "lucide-react";
+import StoryMapsDropdown from "./StoryMapsDropdown";
 
 const externalResources = [
   {
@@ -9,14 +10,13 @@ const externalResources = [
     description: "Comprehensive repository of academic papers, books, and educational resources",
     url: "https://geo-vault-hub-connect.lovable.app/",
     icon: "book",
-    buttonText: "Visit Resource"
+    buttonType: "link"
   },
   {
     title: "Story Maps",
     description: "Interactive geographic stories created by our members",
-    url: "/story-maps",
     icon: "map",
-    buttonText: "View Resource"
+    buttonType: "dropdown"
   }
 ];
 
@@ -39,15 +39,19 @@ const ExternalResourcesTab = () => (
         </CardHeader>
         <CardContent className="flex flex-col flex-grow p-4">
           <p className="flex-grow mb-4 text-gray-600 text-sm">{resource.description}</p>
-          <Button 
-            asChild 
-            size="sm" 
-            className="w-full bg-blue-900 hover:bg-blue-800 text-white text-sm py-2"
-          >
-            <a href={resource.url} target="_blank" rel="noopener noreferrer">
-              {resource.buttonText} <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
+          {resource.buttonType === "link" ? (
+            <Button 
+              asChild 
+              size="sm" 
+              className="w-full bg-blue-900 hover:bg-blue-800 text-white text-sm py-2"
+            >
+              <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                View Resource <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          ) : (
+            <StoryMapsDropdown />
+          )}
         </CardContent>
       </Card>
     ))}

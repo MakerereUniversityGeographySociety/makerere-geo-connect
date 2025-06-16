@@ -9,8 +9,8 @@ const EventsSection = () => {
     {
       id: 1,
       title: "MUGS Hand Over",
-      date: "March 15, 2025",
-      location: "Main Hall, Geography Department",
+      date: "August 18, 2025, 4:30pm",
+      location: "School of Forestry, Environment and Geographical Sciences(SFEGS) Board Room",
       image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Official handover ceremony for the new MUGS leadership team.",
       formLink: "https://form.jotform.com/251345731976060"
@@ -18,8 +18,8 @@ const EventsSection = () => {
     {
       id: 2,
       title: "MUGS Induction and Training",
-      date: "April 10, 2025",
-      location: "Conference Room, Arts Building",
+      date: "August 19, 2025, 4:30pm",
+      location: "Online",
       image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Training session for new society members and leadership team.",
       formLink: "https://form.jotform.com/251345731976060"
@@ -27,8 +27,8 @@ const EventsSection = () => {
     {
       id: 3,
       title: "Freshers Orientation and Registration",
-      date: "August 25, 2025",
-      location: "Lecture Theatre, Geography Department",
+      date: "August 27, 2025, 2pm",
+      location: "School of Forestry, Environment and Geographical Sciences(SFEGS)",
       image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Orientation session for new students joining the society.",
       formLink: "https://form.jotform.com/251345731976060"
