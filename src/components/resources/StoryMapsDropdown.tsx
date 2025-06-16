@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { ExternalLink, ChevronDown } from "lucide-react";
 
 const storyMaps = [
@@ -32,27 +33,31 @@ const StoryMapsDropdown = () => {
           View Resource <ChevronDown className="ml-2 h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-80 bg-white border shadow-lg z-50 p-2">
+      <DropdownMenuContent className="w-80 bg-white border shadow-lg z-50 p-0">
         <div className="p-3 border-b">
           <p className="text-xs text-gray-600 leading-relaxed">
             Explore interactive story maps created by Makerere University Geography Society members to visualize geographical data and present compelling narratives about our environment, Conservation, Education and Sustainability
           </p>
         </div>
-        {storyMaps.map((storyMap, index) => (
-          <DropdownMenuItem key={index} className="p-0 focus:bg-gray-50">
-            <div className="w-full p-3 space-y-2">
-              <h4 className="font-medium text-sm text-gray-900">{storyMap.title}</h4>
-              <p className="text-xs text-gray-600 leading-relaxed">{storyMap.description}</p>
-              <Button
-                size="sm"
-                className="w-full bg-geo-green hover:bg-geo-green-dark text-white text-xs py-1.5"
-                onClick={() => window.open(storyMap.url, "_blank", "noopener,noreferrer")}
-              >
-                View Story <ExternalLink className="ml-1 h-3 w-3" />
-              </Button>
-            </div>
-          </DropdownMenuItem>
-        ))}
+        <ScrollArea className="max-h-96">
+          <div className="p-2">
+            {storyMaps.map((storyMap, index) => (
+              <DropdownMenuItem key={index} className="p-0 focus:bg-gray-50">
+                <div className="w-full p-3 space-y-2">
+                  <h4 className="font-medium text-sm text-gray-900">{storyMap.title}</h4>
+                  <p className="text-xs text-gray-600 leading-relaxed">{storyMap.description}</p>
+                  <Button
+                    size="sm"
+                    className="w-full bg-geo-green hover:bg-geo-green-dark text-white text-xs py-1.5"
+                    onClick={() => window.open(storyMap.url, "_blank", "noopener,noreferrer")}
+                  >
+                    View Story <ExternalLink className="ml-1 h-3 w-3" />
+                  </Button>
+                </div>
+              </DropdownMenuItem>
+            ))}
+          </div>
+        </ScrollArea>
       </DropdownMenuContent>
     </DropdownMenu>
   );
