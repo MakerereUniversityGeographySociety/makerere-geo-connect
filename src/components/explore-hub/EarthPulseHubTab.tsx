@@ -1,6 +1,12 @@
 
-import { Globe, Earth, Wind, ThermometerSnowflake, ThermometerSun } from "lucide-react";
+import { Globe, Earth, Wind, ThermometerSnowflake, ThermometerSun, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const TOOLS = [
   {
@@ -88,37 +94,44 @@ const EarthPulseHubTab = () => (
           Access real-time data, satellite imagery, and interactive tools to understand our planet's vital signs.
         </p>
       </div>
-      {/* Tools Section */}
-      <div className="px-4 pb-5">
-        <h3 className="mt-2 mb-3 text-lg font-semibold text-geo-green text-center">Earth Pulse Tools</h3>
-        <div className="grid gap-4 md:gap-5">
-          {TOOLS.map((tool) => (
-            <div
-              key={tool.name}
-              className="flex flex-col sm:flex-row sm:items-center gap-2 rounded-md border border-gray-100 bg-gray-50 shadow-xs p-3"
-            >
-              <span className="flex justify-center sm:justify-start items-center w-10 h-10">
-                {tool.icon}
-              </span>
-              <div className="flex-1 min-w-0">
-                <span className="block font-medium text-gray-900">{tool.name}</span>
-                <span className="block text-sm text-gray-600">{tool.description}</span>
-              </div>
-              <Button
-                asChild
-                size="sm"
-                className="mt-2 sm:mt-0 bg-geo-green hover:bg-geo-green-dark text-white"
-              >
-                <a
-                  href={tool.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Open
-                </a>
+      {/* Interactive Tools Dropdown */}
+      <div className="px-6 pb-6">
+        <div className="flex justify-center">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button className="bg-geo-green hover:bg-geo-green-dark text-white flex items-center gap-2">
+                Earth Pulse Tools
+                <ChevronDown size={16} />
               </Button>
-            </div>
-          ))}
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-80 max-h-96 overflow-y-auto bg-white border border-gray-200 shadow-lg">
+              {TOOLS.map((tool) => (
+                <DropdownMenuItem key={tool.name} className="p-0">
+                  <div className="flex items-center gap-3 p-3 w-full">
+                    <span className="flex-shrink-0">{tool.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-medium text-gray-900 text-sm">{tool.name}</p>
+                      <p className="text-xs text-gray-600 line-clamp-2">{tool.description}</p>
+                    </div>
+                    <Button
+                      size="sm"
+                      className="bg-geo-green hover:bg-geo-green-dark text-white text-xs px-2 py-1"
+                      asChild
+                    >
+                      <a
+                        href={tool.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Open
+                      </a>
+                    </Button>
+                  </div>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>
