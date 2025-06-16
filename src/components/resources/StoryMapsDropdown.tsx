@@ -19,6 +19,21 @@ const storyMaps = [
     title: "Weekly Story Map",
     description: "Our featured story map of the week. This edition explores cases of Human Wildlife Conflict, Disease Outbreak and humanitarian crises within Eastern Africa",
     url: "https://arcg.is/aT15m0"
+  },
+  {
+    title: "Environmental Conservation Initiative",
+    description: "Mapping conservation efforts across Uganda's national parks and protected areas, showcasing biodiversity hotspots and conservation strategies.",
+    url: "#"
+  },
+  {
+    title: "Climate Change Impact Assessment",
+    description: "Interactive visualization of climate change effects on East African ecosystems, agriculture, and water resources over the past decade.",
+    url: "#"
+  },
+  {
+    title: "Urban Development Patterns",
+    description: "Analyzing urban sprawl and development patterns in major East African cities using satellite imagery and GIS data.",
+    url: "#"
   }
 ];
 
@@ -39,10 +54,10 @@ const StoryMapsDropdown = () => {
             Explore interactive story maps created by Makerere University Geography Society members to visualize geographical data and present compelling narratives about our environment, Conservation, Education and Sustainability
           </p>
         </div>
-        <ScrollArea className="max-h-96">
-          <div className="p-2">
+        <ScrollArea className="max-h-80 overflow-y-auto">
+          <div className="p-2 space-y-1">
             {storyMaps.map((storyMap, index) => (
-              <DropdownMenuItem key={index} className="p-0 focus:bg-gray-50">
+              <DropdownMenuItem key={index} className="p-0 focus:bg-gray-50 rounded-md">
                 <div className="w-full p-3 space-y-2">
                   <h4 className="font-medium text-sm text-gray-900">{storyMap.title}</h4>
                   <p className="text-xs text-gray-600 leading-relaxed">{storyMap.description}</p>
