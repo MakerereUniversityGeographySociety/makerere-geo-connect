@@ -92,6 +92,69 @@ const spatialResources = {
       url: "https://cran.r-project.org/web/views/Spatial.html",
       icon: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=64&h=64&fit=crop&crop=center",
       tags: ["Programming", "Statistics", "Free"]
+    },
+    {
+      title: "Leaflet",
+      description: "Open-source JavaScript library for mobile-friendly interactive maps with a simple API.",
+      url: "https://leafletjs.com/",
+      icon: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=64&h=64&fit=crop&crop=center",
+      tags: ["Web Mapping", "JavaScript", "Free", "Mobile-Friendly"]
+    },
+    {
+      title: "Mapbox GL JS",
+      description: "JavaScript library for vector maps on the web with smooth animations and modern styling capabilities.",
+      url: "https://docs.mapbox.com/mapbox-gl-js/",
+      icon: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=64&h=64&fit=crop&crop=center",
+      tags: ["Web Mapping", "Vector Maps", "JavaScript", "Interactive"]
+    },
+    {
+      title: "OpenLayers",
+      description: "High-performance web mapping library supporting multiple data sources and projection systems.",
+      url: "https://openlayers.org/",
+      icon: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=64&h=64&fit=crop&crop=center",
+      tags: ["Web Mapping", "Open Source", "Multi-format", "JavaScript"]
+    },
+    {
+      title: "PostGIS",
+      description: "Spatial database extender for PostgreSQL adding geographic objects and spatial operations.",
+      url: "https://postgis.net/",
+      icon: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=64&h=64&fit=crop&crop=center",
+      tags: ["Spatial Database", "PostgreSQL", "Open Source", "SQL"]
+    },
+    {
+      title: "SpatiaLite",
+      description: "Lightweight spatial database engine extending SQLite with geographic capabilities.",
+      url: "https://www.gaia-gis.it/fossil/libspatialite/",
+      icon: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=64&h=64&fit=crop&crop=center",
+      tags: ["Spatial Database", "SQLite", "Lightweight", "Open Source"]
+    },
+    {
+      title: "MongoDB Geospatial",
+      description: "NoSQL database with built-in geospatial indexing and query capabilities for location-based applications.",
+      url: "https://www.mongodb.com/docs/manual/geospatial-queries/",
+      icon: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=64&h=64&fit=crop&crop=center",
+      tags: ["Spatial Database", "NoSQL", "Geospatial Indexing", "Cloud"]
+    },
+    {
+      title: "Observable",
+      description: "Interactive notebook platform for data visualization and spatial analysis with JavaScript and D3.",
+      url: "https://observablehq.com/",
+      icon: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=64&h=64&fit=crop&crop=center",
+      tags: ["Sandbox", "Visualization", "Interactive", "JavaScript"]
+    },
+    {
+      title: "CodePen",
+      description: "Online code editor and playground for front-end web development including mapping projects.",
+      url: "https://codepen.io/",
+      icon: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=64&h=64&fit=crop&crop=center",
+      tags: ["Sandbox", "Web Development", "Code Editor", "Community"]
+    },
+    {
+      title: "GitHub Codespaces",
+      description: "Cloud-based development environment for spatial programming and GIS application development.",
+      url: "https://github.com/features/codespaces",
+      icon: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=64&h=64&fit=crop&crop=center",
+      tags: ["Sandbox", "Cloud IDE", "GitHub", "Development"]
     }
   ],
   learningResources: [
@@ -122,6 +185,20 @@ const spatialResources = {
       url: "https://docs.qgis.org/3.28/en/docs/training_manual/",
       icon: "/lovable-uploads/9e47b97e-4346-490e-bf14-9b75b4869ad8.png",
       tags: ["QGIS", "Manual", "Free"]
+    },
+    {
+      title: "Spatial Thoughts Open Course Ware",
+      description: "Comprehensive collection of free spatial analysis and GIS courses with hands-on tutorials and datasets.",
+      url: "https://spatialthoughts.com/",
+      icon: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=64&h=64&fit=crop&crop=center",
+      tags: ["Open Course", "Spatial Analysis", "Free", "Tutorials"]
+    },
+    {
+      title: "Introduction to GIS Programming",
+      description: "Interactive course covering GIS programming fundamentals with Python, JavaScript, and spatial databases.",
+      url: "https://geog-312.gishub.org/#",
+      icon: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=64&h=64&fit=crop&crop=center",
+      tags: ["Programming", "Python", "JavaScript", "Interactive"]
     }
   ],
   projects: [
@@ -162,7 +239,32 @@ const getTagColor = (tag: string) => {
     "API": "bg-indigo-100 text-indigo-800",
     "Training": "bg-yellow-100 text-yellow-800",
     "University": "bg-red-100 text-red-800",
-    "Africa": "bg-amber-100 text-amber-800"
+    "Africa": "bg-amber-100 text-amber-800",
+    "Web Mapping": "bg-teal-100 text-teal-800",
+    "JavaScript": "bg-yellow-100 text-yellow-800",
+    "Mobile-Friendly": "bg-green-100 text-green-800",
+    "Vector Maps": "bg-blue-100 text-blue-800",
+    "Interactive": "bg-purple-100 text-purple-800",
+    "Multi-format": "bg-gray-100 text-gray-800",
+    "Spatial Database": "bg-indigo-100 text-indigo-800",
+    "PostgreSQL": "bg-blue-100 text-blue-800",
+    "SQL": "bg-gray-100 text-gray-800",
+    "SQLite": "bg-green-100 text-green-800",
+    "Lightweight": "bg-lime-100 text-lime-800",
+    "NoSQL": "bg-orange-100 text-orange-800",
+    "Geospatial Indexing": "bg-cyan-100 text-cyan-800",
+    "Sandbox": "bg-pink-100 text-pink-800",
+    "Visualization": "bg-purple-100 text-purple-800",
+    "Code Editor": "bg-gray-100 text-gray-800",
+    "Community": "bg-green-100 text-green-800",
+    "Cloud IDE": "bg-blue-100 text-blue-800",
+    "GitHub": "bg-gray-100 text-gray-800",
+    "Development": "bg-indigo-100 text-indigo-800",
+    "Open Course": "bg-green-100 text-green-800",
+    "Spatial Analysis": "bg-geo-green/20 text-geo-green-dark",
+    "Tutorials": "bg-yellow-100 text-yellow-800",
+    "Programming": "bg-indigo-100 text-indigo-800",
+    "Python": "bg-blue-100 text-blue-800"
   };
   return tagColors[tag] || "bg-gray-100 text-gray-800";
 };
