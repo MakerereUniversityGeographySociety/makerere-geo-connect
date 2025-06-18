@@ -4,7 +4,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ResourceHubHeader from "./resources/ResourceHubHeader";
 import ExternalResourcesTab from "./resources/ExternalResourcesTab";
-import GISToolKitTab from "./resources/GISToolKitTab";
+import SpatialToolKitTab from "./resources/SpatialToolKitTab";
 import MapGalleryTab from "./resources/MapGalleryTab";
 import { BookOpenCheck, Wrench, Map } from "lucide-react";
 
@@ -19,8 +19,8 @@ const ResourcesSection = () => {
             <TabsTrigger value="external-resources" className="data-[state=active]:bg-geo-green data-[state=active]:text-white rounded-full text-sm md:text-base">
               <BookOpenCheck className="mr-2 h-5 w-5" /> External Resources
             </TabsTrigger>
-            <TabsTrigger value="gis-toolkit" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full text-sm md:text-base">
-              <Wrench className="mr-2 h-5 w-5" /> GIS Tool Kit
+            <TabsTrigger value="spatial-toolkit" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full text-sm md:text-base">
+              <Wrench className="mr-2 h-5 w-5" /> Spatial Tool Kit
             </TabsTrigger>
             <TabsTrigger value="map-gallery" className="data-[state=active]:bg-geo-green data-[state=active]:text-white rounded-full text-sm md:text-base">
               <Map className="mr-2 h-5 w-5" /> Map Gallery
@@ -30,8 +30,8 @@ const ResourcesSection = () => {
           <TabsContent value="external-resources" className="mt-8">
             <ExternalResourcesTab />
           </TabsContent>
-          <TabsContent value="gis-toolkit" className="mt-8">
-            <GISToolKitTab />
+          <TabsContent value="spatial-toolkit" className="mt-8">
+            <SpatialToolKitTab />
           </TabsContent>
           <TabsContent value="map-gallery" className="mt-8">
             <MapGalleryTab />
