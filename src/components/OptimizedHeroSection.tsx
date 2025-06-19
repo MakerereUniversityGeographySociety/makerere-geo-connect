@@ -46,7 +46,7 @@ const OptimizedHeroSection = () => {
       
       <div className="container mx-auto px-4 relative z-10 text-center py-10 md:py-0">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
-          Explore. Connect. Discover Geography.
+          United to Conserve Nature
         </h1>
         <div className="flex flex-wrap justify-center gap-4">
           <a href="#events">
