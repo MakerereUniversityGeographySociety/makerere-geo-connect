@@ -33,13 +33,13 @@ export default defineConfig(({ mode }) => ({
     },
     cssCodeSplit: true,
     sourcemap: false,
-    minify: 'terser',
-    terserOptions: {
+    minify: mode === 'production' ? 'terser' : false,
+    terserOptions: mode === 'production' ? {
       compress: {
-        drop_console: mode === 'production',
+        drop_console: true,
         drop_debugger: true
       }
-    },
+    } : undefined,
     chunkSizeWarningLimit: 1000
   },
   optimizeDeps: {
