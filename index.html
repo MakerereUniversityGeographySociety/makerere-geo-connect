@@ -8,18 +8,21 @@
     <meta name="description" content="Official website of Makerere University Geography Society - Explore. Connect. Discover Geography." />
     <meta name="author" content="Makerere University Geography Society" />
     
-    <!-- Preconnect to external domains -->
+    <!-- Critical resource hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://js.arcgis.com">
+    <link rel="dns-prefetch" href="https://js.arcgis.com">
+    <link rel="dns-prefetch" href="https://www.instagram.com">
+    <link rel="dns-prefetch" href="https://platform.twitter.com">
     
-    <!-- Critical CSS resources -->
+    <!-- Critical fonts with optimized loading -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Preload critical images -->
     <link rel="preload" href="/lovable-uploads/ab88620e-3c2f-4622-8a52-e4d1eb42af3f.png" as="image" fetchpriority="high">
     <link rel="preload" href="/lovable-uploads/0652451b-7248-4a89-ad03-efe7199fc573.png" as="image" fetchpriority="high">
 
+    <!-- Open Graph and Twitter meta tags -->
     <meta property="og:title" content="Makerere University Geography Society" />
     <meta property="og:description" content="Explore. Connect. Discover Geography. Join our community at Makerere University." />
     <meta property="og:type" content="website" />
@@ -29,16 +32,50 @@
     <meta name="twitter:site" content="@MUGS57584" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
-    <!-- ArcGIS Map Component -->
-    <script type="module" src="https://js.arcgis.com/embeddable-components/4.32/arcgis-embeddable-components.esm.js"></script>
+    <!-- Critical CSS inlined for faster render -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { margin: 0; font-family: 'Montserrat', 'Open Sans', sans-serif; }
+      .hero-fallback { 
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .loading-skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+      @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+    </style>
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- Instagram embed script -->
-    <script async src="//www.instagram.com/embed.js"></script>
-    <!-- Twitter embed script -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    <!-- Non-critical scripts loaded asynchronously -->
+    <script>
+      // Defer non-critical script loading
+      function loadScript(src, callback) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        if (callback) script.onload = callback;
+        document.head.appendChild(script);
+      }
+      
+      // Load scripts after page load
+      window.addEventListener('load', function() {
+        // Only load these scripts when needed by components
+        // They are now loaded by the components themselves
+      });
+    </script>
+    
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
