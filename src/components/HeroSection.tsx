@@ -39,7 +39,7 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10 text-center py-10 md:py-0">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 drop-shadow-lg">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
           Explore. Connect. Discover Geography.
         </h1>
         <div className="flex flex-wrap justify-center gap-4">

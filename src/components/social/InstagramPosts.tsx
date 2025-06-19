@@ -51,9 +51,7 @@ const InstagramPosts = () => {
 
   const posts = [
     "https://www.instagram.com/p/DHl5rHboc8X/?utm_source=ig_embed&amp;utm_campaign=loading",
-    "https://www.instagram.com/p/DGvQWN0oM9V/?utm_source=ig_embed&amp;utm_campaign=loading",
-    "https://www.instagram.com/p/DFr5y3ho9RU/?utm_source=ig_embed&amp;utm_campaign=loading",
-    "https://www.instagram.com/p/DDeDRRZoyPp/?utm_source=ig_embed&amp;utm_campaign=loading"
+    "https://www.instagram.com/p/DGvQWN0oM9V/?utm_source=ig_embed&amp;utm_campaign=loading"
   ];
 
   return (
@@ -63,11 +61,6 @@ const InstagramPosts = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <InstagramPost permalink={posts[0]} />
         <InstagramPost permalink={posts[1]} />
-      </div>
-      
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-        <InstagramPost permalink={posts[2]} />
-        <InstagramPost permalink={posts[3]} />
       </div>
     </div>
   );
