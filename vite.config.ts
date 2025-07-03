@@ -27,7 +27,9 @@ export default defineConfig(({ mode }) => ({
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
           ui: ['@radix-ui/react-accordion', '@radix-ui/react-tabs', '@radix-ui/react-dialog'],
-          utils: ['clsx', 'tailwind-merge', 'class-variance-authority']
+          utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
+          social: ['src/components/social/OptimizedSocialSection.tsx', 'src/components/social/OptimizedInstagramPosts.tsx'],
+          maps: ['src/components/OptimizedMapSection.tsx']
         }
       }
     },
@@ -37,13 +39,22 @@ export default defineConfig(({ mode }) => ({
     terserOptions: mode === 'production' ? {
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace']
+      },
+      mangle: {
+        safari10: true
       }
     } : undefined,
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 500,
+    target: ['es2015', 'chrome61', 'safari11', 'firefox60'],
+    cssTarget: ['chrome61', 'safari11', 'firefox60']
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
     exclude: []
+  },
+  esbuild: {
+    target: 'es2015'
   }
 }));

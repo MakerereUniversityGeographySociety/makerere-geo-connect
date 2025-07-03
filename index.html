@@ -3,28 +3,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Makerere University Geography Society</title>
-    <meta name="description" content="Official website of Makerere University Geography Society - Explore. Connect. Discover Geography." />
+    <meta name="description" content="Official website of Makerere University Geography Society - United to Conserve Nature." />
     <meta name="author" content="Makerere University Geography Society" />
     
-    <!-- Critical resource hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://js.arcgis.com">
-    <link rel="dns-prefetch" href="https://www.instagram.com">
-    <link rel="dns-prefetch" href="https://platform.twitter.com">
+    <!-- Performance and compatibility meta tags -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     
-    <!-- Critical fonts with optimized loading -->
+    <!-- Critical resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.instagram.com">
+    <link rel="dns-prefetch" href="https://jsfiddle.net">
+    
+    <!-- Critical fonts with optimized loading for older devices -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Preload critical images -->
-    <link rel="preload" href="/lovable-uploads/ab88620e-3c2f-4622-8a52-e4d1eb42af3f.png" as="image" fetchpriority="high">
+    <!-- Preload critical images with responsive sizing -->
+    <link rel="preload" href="/lovable-uploads/ab88620e-3c2f-4622-8a52-e4d1eb42af3f.png" as="image" fetchpriority="high" media="(min-width: 768px)">
     <link rel="preload" href="/lovable-uploads/0652451b-7248-4a89-ad03-efe7199fc573.png" as="image" fetchpriority="high">
 
     <!-- Open Graph and Twitter meta tags -->
     <meta property="og:title" content="Makerere University Geography Society" />
-    <meta property="og:description" content="Explore. Connect. Discover Geography. Join our community at Makerere University." />
+    <meta property="og:description" content="United to Conserve Nature. Join our community at Makerere University." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
@@ -34,46 +38,79 @@
     
     <!-- Critical CSS inlined for faster render -->
     <style>
-      /* Critical above-the-fold styles */
-      body { margin: 0; font-family: 'Montserrat', 'Open Sans', sans-serif; }
+      /* Critical above-the-fold styles optimized for low-end devices */
+      body { 
+        margin: 0; 
+        font-family: 'Montserrat', 'Open Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeSpeed;
+      }
       .hero-fallback { 
         background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        contain: layout style;
       }
       .loading-skeleton {
         background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
         background-size: 200% 100%;
-        animation: loading 1.5s infinite;
+        animation: loading 1.2s infinite;
       }
       @keyframes loading {
         0% { background-position: 200% 0; }
         100% { background-position: -200% 0; }
       }
+      /* Optimize for older Android WebView */
+      @media (max-width: 480px) {
+        * {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+      }
     </style>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading fallback for slow connections -->
+      <div class="hero-fallback">
+        <div style="text-align: center; color: white; padding: 2rem;">
+          <h1 style="font-size: 1.5rem; margin-bottom: 1rem;">Makerere University Geography Society</h1>
+          <div class="loading-skeleton" style="width: 200px; height: 4px; margin: 0 auto; border-radius: 2px;"></div>
+        </div>
+      </div>
+    </div>
     
-    <!-- Non-critical scripts loaded asynchronously -->
+    <!-- Performance monitoring for debugging (remove in production) -->
     <script>
-      // Defer non-critical script loading
-      function loadScript(src, callback) {
-        const script = document.createElement('script');
-        script.src = src;
-        script.async = true;
-        if (callback) script.onload = callback;
-        document.head.appendChild(script);
+      // Basic performance monitoring
+      if ('performance' in window) {
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            const perfData = performance.getEntriesByType('navigation')[0];
+            console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart + 'ms');
+            console.log('DOM Content Loaded:', perfData.domContentLoadedEventEnd - perfData.fetchStart + 'ms');
+          }, 0);
+        });
       }
       
-      // Load scripts after page load
-      window.addEventListener('load', function() {
-        // Only load these scripts when needed by components
-        // They are now loaded by the components themselves
-      });
+      // Defer non-critical script loading based on network and device capabilities
+      function loadNonCriticalScripts() {
+        // Check if device is likely low-end
+        const isLowEndDevice = navigator.hardwareConcurrency <= 2 || 
+                               navigator.deviceMemory <= 2 || 
+                               /Android [1-4]\./.test(navigator.userAgent);
+        
+        if (isLowEndDevice) {
+          console.log('Low-end device detected, optimizing load strategy');
+        }
+      }
+      
+      // Load scripts after initial render
+      window.addEventListener('load', loadNonCriticalScripts);
     </script>
     
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
