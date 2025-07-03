@@ -38,8 +38,8 @@ const OptimizedMapSection = () => {
           {isVisible ? (
             <iframe 
               width="100%" 
-              height={isMobile ? "280" : "400"}
-              src="//jsfiddle.net/makugs/tr4e6vyw/26/embedded/js,html,css,result/dark/" 
+              height={isMobile ? "280" : "300"}
+              src="//jsfiddle.net/makugs/tr4e6vyw/26/embedded/result/dark/" 
               frameBorder="0" 
               loading="lazy" 
               allowTransparency={true} 
@@ -55,7 +55,7 @@ const OptimizedMapSection = () => {
             <div 
               className="bg-gray-100 animate-pulse rounded-lg flex items-center justify-center"
               style={{
-                height: isMobile ? "280px" : "400px", 
+                height: isMobile ? "280px" : "300px", 
                 width: "100%", 
                 maxWidth: "800px"
               }}
