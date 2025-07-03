@@ -74,11 +74,11 @@ export const spatialResources = {
       tags: ["Remote Sensing", "Free", "Desktop"]
     },
     {
-      title: "Cesium",
-      description: "Platform for creating 3D geospatial applications and interactive globe visualization in web browsers.",
-      url: "https://cesium.com/",
-      icon: "/lovable-uploads/007e42d3-7e93-4721-ade9-15953a500d39.png",
-      tags: ["3D", "Web", "Visualization"]
+      title: "Overpass turbo",
+      description: "Web-based data mining tool for OpenStreetMap that allows you to run Overpass API queries and visualize results.",
+      url: "https://overpass-turbo.eu/",
+      icon: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=64&h=64&fit=crop&crop=center",
+      tags: ["OpenStreetMap", "Data Mining", "Free", "Web"]
     },
     {
       title: "R with Spatial Packages",
@@ -202,13 +202,6 @@ export const spatialResources = {
       url: "https://tasks.hotosm.org/",
       icon: "/lovable-uploads/e1714a40-a30f-493d-b88b-4b85f4e1267b.png",
       tags: ["Humanitarian", "Crowdsourcing", "Volunteer"]
-    },
-    {
-      title: "Global Forest Watch",
-      description: "Real-time forest monitoring platform using satellite data to track deforestation and forest changes.",
-      url: "https://www.globalforestwatch.org/",
-      icon: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=64&h=64&fit=crop&crop=center",
-      tags: ["Environment", "Monitoring", "Satellite"]
     },
     {
       title: "eBird",
