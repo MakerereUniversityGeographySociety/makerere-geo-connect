@@ -12,9 +12,13 @@ const OptimizedHeroSection = () => {
         <img 
           src="/lovable-uploads/00d21485-09cf-4306-be7b-512ce32f0026.png"
           alt="Geography Society field trip"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
           loading="eager"
           fetchPriority="high"
+          style={{ 
+            minHeight: '100%',
+            objectPosition: 'center center'
+          }}
         />
         
         {/* Mobile overlay for content on small screens */}
