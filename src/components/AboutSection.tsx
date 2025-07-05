@@ -2,7 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutSection = () => {
-  // Rearranged committee members: Patron comes first
+  // Rearranged committee members: Patron comes first, added Treasurer
   const committeeMembers = [
     { 
       name: "Dr. Nseka Denis", 
@@ -23,6 +23,11 @@ const AboutSection = () => {
       name: "Tollo Titus Vanon", 
       position: "Speaker", 
       image: "/lovable-uploads/fcdf8b47-5a8a-4307-97d6-abc5629dbc3a.png" 
+    },
+    { 
+      name: "Begirira Luciana .A", 
+      position: "Treasurer", 
+      image: "/lovable-uploads/68fb0f31-f233-4c6a-83cf-851b22df0cd0.png" 
     },
   ];
 
@@ -48,7 +53,7 @@ const AboutSection = () => {
               {committeeMembers.map((member, index) => (
                 <Card 
                   key={index} 
-                  className="overflow-hidden max-w-[230px] mx-auto shadow hover:scale-105 transition-transform duration-200"
+                  className="overflow-hidden max-w-[230px] mx-auto shadow hover:scale-105 transition-transform duration-200 bg-lime-100"
                 >
                   <CardContent className="p-0">
                     <div className="aspect-square w-full h-[130px] bg-gray-100">
