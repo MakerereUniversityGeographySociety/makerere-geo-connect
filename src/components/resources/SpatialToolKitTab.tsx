@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Globe, Map, Search } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SpatialToolKitTab = () => {
@@ -10,19 +10,19 @@ const SpatialToolKitTab = () => {
       title: "Google Maps",
       description: "Web-based mapping service with satellite imagery, street maps, and real-time traffic information. Perfect for basic location services and visualization.",
       url: "https://maps.google.com",
-      icon: <Globe className="h-8 w-8 text-blue-600" />
+      icon: <img src="/lovable-uploads/fc8eaf75-be23-4377-bcb3-30b24240e862.png" alt="Google Maps" className="h-8 w-8" />
     },
     {
       title: "ArcGIS Online",
       description: "Cloud-based GIS platform for creating, sharing, and analyzing maps and spatial data. Industry-standard tool for professional GIS work.",
       url: "https://www.arcgis.com",
-      icon: <Map className="h-8 w-8 text-green-600" />
+      icon: <img src="/lovable-uploads/cbaa581b-4f0f-448b-b5ab-b1bbc7b799d3.png" alt="ArcGIS Online" className="h-8 w-8" />
     },
     {
       title: "Overpass turbo",
       description: "Web-based query tool for OpenStreetMap data. Powerful for extracting specific geographic data and performing spatial queries.",
       url: "https://overpass-turbo.eu",
-      icon: <Search className="h-8 w-8 text-orange-600" />
+      icon: <img src="/lovable-uploads/3bdc1f81-94d1-4080-a5fa-933d4242cecd.png" alt="Overpass turbo" className="h-8 w-8" />
     }
   ];
 
