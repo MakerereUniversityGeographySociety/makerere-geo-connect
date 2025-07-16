@@ -78,7 +78,7 @@ const OptimizedMapSection = () => {
                 src="//jsfiddle.net/makugs/tr4e6vyw/26/embedded/result/dark/" 
                 frameBorder="0" 
                 loading="lazy" 
-                allowTransparency={true} 
+                allowTransparency 
                 allowFullScreen={true}
                 onError={handleMapError}
                 style={{

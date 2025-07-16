@@ -11,49 +11,49 @@ import {
 const TOOLS = [
   {
     name: "Solar System Scope",
-    icon: <Globe className="text-geo-green" />,
+    icon: <Globe className="text-primary" />,
     url: "https://www.solarsystemscope.com/",
     description: "Explore our solar system in stunning 3D. View planets, moons, and more with interactive features.",
   },
   {
     name: "NASA Earth View",
-    icon: <Earth className="text-blue-400" />,
+    icon: <Earth className="text-geo-green" />,
     url: "https://worldview.earthdata.nasa.gov/",
     description: "Satellite imagery and data visualizations of Earth's surface direct from NASA.",
   },
   {
     name: "NASA Earth Live",
-    icon: <ThermometerSun className="text-yellow-500" />,
+    icon: <ThermometerSun className="text-accent-foreground" />,
     url: "https://eol.jsc.nasa.gov/esrs/hdev/",
     description: "Live stream: Watch the Earth from space in real-time, right from the International Space Station.",
   },
   {
     name: "NASA Eyes on Earth",
-    icon: <Globe className="text-green-700" />,
+    icon: <Globe className="text-geo-green-dark" />,
     url: "https://eyes.nasa.gov/apps/earth",
     description: "Interactive NASA visualization of global environmental data and satellite tracking.",
   },
   {
     name: "Open Weather",
-    icon: <Wind className="text-sky-500" />,
+    icon: <Wind className="text-primary" />,
     url: "https://openweathermap.org/",
     description: "Access current weather, forecasts, and historical data for any location on Earth.",
   },
   {
     name: "Earth Null School (Global Wind Map)",
-    icon: <Wind className="text-emerald-600" />,
+    icon: <Wind className="text-geo-green" />,
     url: "https://earth.nullschool.net/",
     description: "Visual, animated map of global wind, weather, and ocean conditions in near real-time.",
   },
   {
     name: "Global Forest Watch",
-    icon: <Earth className="text-lime-600" />,
+    icon: <Earth className="text-accent" />,
     url: "https://www.globalforestwatch.org/",
     description: "Monitor global forests, track deforestation, fires, and forest health worldwide.",
   },
   {
     name: "Carbon Footprint",
-    icon: <ThermometerSnowflake className="text-cyan-600" />,
+    icon: <ThermometerSnowflake className="text-muted-foreground" />,
     url: "https://www.carbonfootprint.com/calculator.aspx",
     description: "Calculate your carbon footprint and explore ways to reduce your environmental impact.",
   },
@@ -104,18 +104,18 @@ const EarthPulseHubTab = () => (
                 <ChevronDown size={16} />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-80 max-h-96 overflow-y-auto bg-white border border-gray-200 shadow-lg">
+            <DropdownMenuContent className="w-80 max-h-96 overflow-y-auto bg-background border border-border shadow-lg z-50">
               {TOOLS.map((tool) => (
-                <DropdownMenuItem key={tool.name} className="p-0">
+                <DropdownMenuItem key={tool.name} className="p-0 hover:bg-muted focus:bg-muted">
                   <div className="flex items-center gap-3 p-3 w-full">
                     <span className="flex-shrink-0">{tool.icon}</span>
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium text-gray-900 text-sm">{tool.name}</p>
-                      <p className="text-xs text-gray-600 line-clamp-2">{tool.description}</p>
+                      <p className="font-medium text-foreground text-sm">{tool.name}</p>
+                      <p className="text-sm text-muted-foreground line-clamp-2">{tool.description}</p>
                     </div>
                     <Button
                       size="sm"
-                      className="bg-geo-green hover:bg-geo-green-dark text-white text-xs px-2 py-1"
+                      className="bg-geo-green hover:bg-geo-green-dark text-white text-xs px-2 py-1 flex-shrink-0"
                       asChild
                     >
                       <a
