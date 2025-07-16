@@ -1,6 +1,7 @@
 
 import Header from "@/components/Header";
 import OptimizedHeroSection from "@/components/OptimizedHeroSection";
+import SEOHead from "@/components/SEOHead";
 import { 
   LazySection,
   LazyAboutSection,
@@ -18,8 +19,32 @@ import { lazy, Suspense } from "react";
 const LazySocialSection = lazy(() => import("@/components/social/OptimizedSocialSection"));
 
 const Index = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Makerere University Geography Society - Home",
+    "description": "Join Uganda's premier geography society at Makerere University. Explore field trips, research opportunities, and conservation initiatives.",
+    "url": "https://mugs.lovable.app/",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Makerere University Geography Society",
+      "alternateName": "MUGS",
+      "description": "United to Conserve Nature",
+      "url": "https://mugs.lovable.app/",
+      "sameAs": [
+        "https://twitter.com/MUGS57584",
+        "https://www.instagram.com/mugs_mak/"
+      ]
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
+      <SEOHead 
+        title="Makerere University Geography Society - United to Conserve Nature"
+        description="Join Uganda's premier geography society at Makerere University. Explore field trips, research opportunities, and conservation initiatives with fellow geography enthusiasts."
+        structuredData={structuredData}
+      />
       <Header />
       <main className="flex-grow">
         <OptimizedHeroSection />

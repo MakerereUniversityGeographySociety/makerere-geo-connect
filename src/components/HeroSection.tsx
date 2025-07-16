@@ -40,8 +40,11 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 relative z-10 text-center py-10 md:py-0">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
-          Explore. Connect. Discover Geography.
+          Makerere University Geography Society
         </h1>
+        <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 drop-shadow-lg font-medium">
+          United to Conserve Nature
+        </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a href="#events">
             <Button className="bg-geo-green hover:bg-geo-green-dark text-white font-semibold px-6 py-2 md:px-8 md:py-6 text-sm md:text-base">

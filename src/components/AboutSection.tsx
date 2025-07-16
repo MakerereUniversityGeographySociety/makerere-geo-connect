@@ -32,14 +32,14 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-16 bg-gray-50">
+    <section id="about" className="py-16 bg-gray-50" itemScope itemType="https://schema.org/Organization">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">About the Society</h2>
         
         <div className="mx-auto">
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-700 mb-4" itemProp="description">
               The Makerere University Geography Society aims to foster a community of geography enthusiasts, provide practical learning experiences, and connect students with industry professionals. We're committed to exploring our world through field trips, research, and community engagement.
             </p>
             <p className="text-gray-700">
