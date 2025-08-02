@@ -10,8 +10,8 @@ const OptimizedHeroSection = () => {
       {/* Image section - 3/4 of the space */}
       <div className={`${isMobile ? 'w-full' : 'w-3/4'} relative overflow-hidden`}>
         <img 
-          src="/lovable-uploads/00d21485-09cf-4306-be7b-512ce32f0026.png"
-          alt="Geography Society field trip"
+          src="/lovable-uploads/6561a15f-a1c2-4592-b5ce-92c1d203ddd4.png"
+          alt="Geography Society locations and field activities"
           className="w-full h-full object-cover object-center"
           loading="eager"
           fetchPriority="high"
