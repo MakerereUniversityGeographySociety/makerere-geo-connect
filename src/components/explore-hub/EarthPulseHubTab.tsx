@@ -104,7 +104,7 @@ const EarthPulseHubTab = () => (
                 <ChevronDown size={16} />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-80 max-h-96 overflow-y-auto bg-background border border-border shadow-lg z-50">
+            <DropdownMenuContent className="w-80 max-h-96 overflow-y-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl z-50">
               {TOOLS.map((tool) => (
                 <DropdownMenuItem key={tool.name} className="p-0 hover:bg-muted focus:bg-muted">
                   <div className="flex items-center gap-3 p-3 w-full">
