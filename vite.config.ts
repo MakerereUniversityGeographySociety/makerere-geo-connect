@@ -24,12 +24,31 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
+          // Core framework
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
+          
+          // UI libraries - split by usage frequency
           ui: ['@radix-ui/react-accordion', '@radix-ui/react-tabs', '@radix-ui/react-dialog'],
+          radix: ['@radix-ui/react-popover', '@radix-ui/react-select', '@radix-ui/react-dropdown-menu'],
+          
+          // Utilities
           utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
+          
+          // Feature-based chunks for better caching
           social: ['src/components/social/OptimizedSocialSection.tsx', 'src/components/social/OptimizedInstagramPosts.tsx'],
-          maps: ['src/components/OptimizedMapSection.tsx']
+          maps: ['src/components/OptimizedMapSection.tsx'],
+          
+          // Images and performance
+          images: ['src/components/ui/optimized-image.tsx', 'src/components/ui/progressive-image.tsx', 'src/hooks/useImagePreloader.ts'],
+          
+          // Heavy components that are lazily loaded
+          sections: [
+            'src/components/AboutSection.tsx',
+            'src/components/EventsSection.tsx', 
+            'src/components/ExploreHubSection.tsx',
+            'src/components/MerchandiseSection.tsx'
+          ]
         }
       }
     },

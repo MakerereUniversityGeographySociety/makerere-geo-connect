@@ -11,13 +11,21 @@ export const LazyResourcesSection = lazy(() => import('./ResourcesSection'));
 export const LazySocialSection = lazy(() => import('./SocialSection'));
 export const LazyMapSection = lazy(() => import('./MapSection'));
 
-// Loading fallback component
+// Enhanced loading fallback component with better performance
 const SectionSkeleton = ({ height = "400px" }: { height?: string }) => (
   <div 
-    className="animate-pulse bg-gray-100 w-full flex items-center justify-center"
+    className="relative w-full overflow-hidden bg-gray-100 contain-layout"
     style={{ height }}
   >
-    <div className="text-gray-400">Loading...</div>
+    {/* Enhanced shimmer effect */}
+    <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-white to-gray-200">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shimmer"></div>
+    </div>
+    
+    {/* Content placeholder */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="text-gray-400 text-sm">Loading content...</div>
+    </div>
   </div>
 );
 

@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { 
   Carousel, 
   CarouselContent, 
@@ -8,6 +8,8 @@ import {
   CarouselPrevious 
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { useImagePreloader } from "@/hooks/useImagePreloader";
 
 interface ImageSlideshowProps {
   images: string[];
@@ -17,42 +19,25 @@ interface ImageSlideshowProps {
 
 const ImageSlideshow = ({ images, interval = 5000, className }: ImageSlideshowProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set([0])); // Preload first image
-
-  const preloadNextImage = useCallback((index: number) => {
-    const nextIndex = (index + 1) % images.length;
-    if (!loadedImages.has(nextIndex)) {
-      const img = new Image();
-      img.src = images[nextIndex];
-      img.onload = () => {
-        setLoadedImages(prev => new Set([...prev, nextIndex]));
-      };
-    }
-  }, [images, loadedImages]);
+  
+  // Use optimized image preloader
+  const { preloadNext, isImageLoaded } = useImagePreloader(images, {
+    priority: true,
+    preloadCount: 3,
+    quality: 85
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((current) => {
         const next = current === images.length - 1 ? 0 : current + 1;
-        preloadNextImage(next);
+        preloadNext(current);
         return next;
       });
     }, interval);
 
     return () => clearInterval(timer);
-  }, [images, interval, preloadNextImage]);
-
-  // Preload first few images on mount
-  useEffect(() => {
-    const preloadCount = Math.min(3, images.length);
-    for (let i = 1; i < preloadCount; i++) {
-      const img = new Image();
-      img.src = images[i];
-      img.onload = () => {
-        setLoadedImages(prev => new Set([...prev, i]));
-      };
-    }
-  }, [images]);
+  }, [images, interval, preloadNext]);
 
   return (
     <Carousel className={cn("w-full", className)}>
@@ -60,16 +45,17 @@ const ImageSlideshow = ({ images, interval = 5000, className }: ImageSlideshowPr
         {images.map((image, index) => (
           <CarouselItem key={index} className="relative">
             <div className="relative aspect-video overflow-hidden rounded-lg h-full">
-              <img
+              <OptimizedImage
                 src={image}
                 alt={`Slideshow image ${index + 1}`}
                 className={cn(
-                  "object-cover w-full h-full transition-opacity duration-1000",
-                  index === activeIndex ? "opacity-100" : "opacity-0 absolute inset-0"
+                  "transition-all duration-1000",
+                  index === activeIndex ? "opacity-100 scale-100" : "opacity-0 scale-105 absolute inset-0"
                 )}
-                loading={index === 0 ? "eager" : "lazy"}
-                fetchPriority={index === 0 ? "high" : "low"}
-                decoding={index === 0 ? "sync" : "async"}
+                priority={index === 0}
+                placeholder="blur"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                quality={85}
               />
             </div>
           </CarouselItem>
