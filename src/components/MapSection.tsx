@@ -47,9 +47,9 @@ const MapSection = () => {
         <div className="flex justify-center">
           <arcgis-embedded-map 
             style={{
-              height: isMobile ? "350px" : "500px", 
+              height: isMobile ? "280px" : "400px", 
               width: "100%", 
-              maxWidth: "1000px",
+              maxWidth: "800px",
               borderRadius: "8px",
               boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
             }} 
